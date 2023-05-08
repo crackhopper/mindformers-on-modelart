@@ -1,0 +1,6 @@
+numpy
+sentencepiece
+ftfy
+regex
+tqdm
+pyyaml

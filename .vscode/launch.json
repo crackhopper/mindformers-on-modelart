@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: run_mindformer.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_mindformer.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config", "configs/gpt2/run_gpt2-tiny.yaml",
+                "--run_mode", "train",
+                "--device_target", "CPU",
+                // "--dataset_dir", "/home/crackhopper/project/test_ascend/data/"
+            ],
+            "justMyCode": false
+        }
+    ]
+}

@@ -1,0 +1,1545 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] Default_wrapper.8
+# In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:127/    def construct(self, *inputs):/
+funcgraph fg_8(
+        %para1 : Tensor(I32)[4, 2048]    # inputs0
+        , %para2 : Ref[Tensor(F32)][]    # scale_sense
+        , %para3 : Ref[Tensor(F32)][50257, 1024]    # embedding.word_embedding.embedding_table
+        , %para4 : Ref[Tensor(F32)][2048, 1024]    # embedding.position_embedding.embedding_table
+        , %para5 : Ref[Tensor(F16)][1024, 1024]    # blocks.0.attention.projection.weight
+        , %para6 : Ref[Tensor(F16)][1024, 1024]    # blocks.0.attention.dense1.weight
+        , %para7 : Ref[Tensor(F16)][1024, 1024]    # blocks.0.attention.dense2.weight
+        , %para8 : Ref[Tensor(F16)][1024, 1024]    # blocks.0.attention.dense3.weight
+        , %para9 : Ref[Tensor(F16)][1024, 4096]    # blocks.0.output.mapping.weight
+        , %para10 : Ref[Tensor(F16)][4096, 1024]    # blocks.0.output.projection.weight
+        , %para11 : Ref[Tensor(F16)][1024, 1024]    # blocks.1.attention.projection.weight
+        , %para12 : Ref[Tensor(F16)][1024, 1024]    # blocks.1.attention.dense1.weight
+        , %para13 : Ref[Tensor(F16)][1024, 1024]    # blocks.1.attention.dense2.weight
+        , %para14 : Ref[Tensor(F16)][1024, 1024]    # blocks.1.attention.dense3.weight
+        , %para15 : Ref[Tensor(F16)][1024, 4096]    # blocks.1.output.mapping.weight
+        , %para16 : Ref[Tensor(F16)][4096, 1024]    # blocks.1.output.projection.weight
+        , %para17 : Ref[Tensor(F16)][1024, 1024]    # blocks.2.attention.projection.weight
+        , %para18 : Ref[Tensor(F16)][1024, 1024]    # blocks.2.attention.dense1.weight
+        , %para19 : Ref[Tensor(F16)][1024, 1024]    # blocks.2.attention.dense2.weight
+        , %para20 : Ref[Tensor(F16)][1024, 1024]    # blocks.2.attention.dense3.weight
+        , %para21 : Ref[Tensor(F16)][1024, 4096]    # blocks.2.output.mapping.weight
+        , %para22 : Ref[Tensor(F16)][4096, 1024]    # blocks.2.output.projection.weight
+        , %para23 : Ref[Tensor(F16)][1024, 1024]    # blocks.3.attention.projection.weight
+        , %para24 : Ref[Tensor(F16)][1024, 1024]    # blocks.3.attention.dense1.weight
+        , %para25 : Ref[Tensor(F16)][1024, 1024]    # blocks.3.attention.dense2.weight
+        , %para26 : Ref[Tensor(F16)][1024, 1024]    # blocks.3.attention.dense3.weight
+        , %para27 : Ref[Tensor(F16)][1024, 4096]    # blocks.3.output.mapping.weight
+        , %para28 : Ref[Tensor(F16)][4096, 1024]    # blocks.3.output.projection.weight
+        , %para29 : Ref[Tensor(F16)][1024, 1024]    # blocks.4.attention.projection.weight
+        , %para30 : Ref[Tensor(F16)][1024, 1024]    # blocks.4.attention.dense1.weight
+        , %para31 : Ref[Tensor(F16)][1024, 1024]    # blocks.4.attention.dense2.weight
+        , %para32 : Ref[Tensor(F16)][1024, 1024]    # blocks.4.attention.dense3.weight
+        , %para33 : Ref[Tensor(F16)][1024, 4096]    # blocks.4.output.mapping.weight
+        , %para34 : Ref[Tensor(F16)][4096, 1024]    # blocks.4.output.projection.weight
+        , %para35 : Ref[Tensor(F16)][1024, 1024]    # blocks.5.attention.projection.weight
+        , %para36 : Ref[Tensor(F16)][1024, 1024]    # blocks.5.attention.dense1.weight
+        , %para37 : Ref[Tensor(F16)][1024, 1024]    # blocks.5.attention.dense2.weight
+        , %para38 : Ref[Tensor(F16)][1024, 1024]    # blocks.5.attention.dense3.weight
+        , %para39 : Ref[Tensor(F16)][1024, 4096]    # blocks.5.output.mapping.weight
+        , %para40 : Ref[Tensor(F16)][4096, 1024]    # blocks.5.output.projection.weight
+        , %para41 : Ref[Tensor(F16)][1024, 1024]    # blocks.6.attention.projection.weight
+        , %para42 : Ref[Tensor(F16)][1024, 1024]    # blocks.6.attention.dense1.weight
+        , %para43 : Ref[Tensor(F16)][1024, 1024]    # blocks.6.attention.dense2.weight
+        , %para44 : Ref[Tensor(F16)][1024, 1024]    # blocks.6.attention.dense3.weight
+        , %para45 : Ref[Tensor(F16)][1024, 4096]    # blocks.6.output.mapping.weight
+        , %para46 : Ref[Tensor(F16)][4096, 1024]    # blocks.6.output.projection.weight
+        , %para47 : Ref[Tensor(F16)][1024, 1024]    # blocks.7.attention.projection.weight
+        , %para48 : Ref[Tensor(F16)][1024, 1024]    # blocks.7.attention.dense1.weight
+        , %para49 : Ref[Tensor(F16)][1024, 1024]    # blocks.7.attention.dense2.weight
+        , %para50 : Ref[Tensor(F16)][1024, 1024]    # blocks.7.attention.dense3.weight
+        , %para51 : Ref[Tensor(F16)][1024, 4096]    # blocks.7.output.mapping.weight
+        , %para52 : Ref[Tensor(F16)][4096, 1024]    # blocks.7.output.projection.weight
+        , %para53 : Ref[Tensor(F16)][1024, 1024]    # blocks.8.attention.projection.weight
+        , %para54 : Ref[Tensor(F16)][1024, 1024]    # blocks.8.attention.dense1.weight
+        , %para55 : Ref[Tensor(F16)][1024, 1024]    # blocks.8.attention.dense2.weight
+        , %para56 : Ref[Tensor(F16)][1024, 1024]    # blocks.8.attention.dense3.weight
+        , %para57 : Ref[Tensor(F16)][1024, 4096]    # blocks.8.output.mapping.weight
+        , %para58 : Ref[Tensor(F16)][4096, 1024]    # blocks.8.output.projection.weight
+        , %para59 : Ref[Tensor(F16)][1024, 1024]    # blocks.9.attention.projection.weight
+        , %para60 : Ref[Tensor(F16)][1024, 1024]    # blocks.9.attention.dense1.weight
+        , %para61 : Ref[Tensor(F16)][1024, 1024]    # blocks.9.attention.dense2.weight
+        , %para62 : Ref[Tensor(F16)][1024, 1024]    # blocks.9.attention.dense3.weight
+        , %para63 : Ref[Tensor(F16)][1024, 4096]    # blocks.9.output.mapping.weight
+        , %para64 : Ref[Tensor(F16)][4096, 1024]    # blocks.9.output.projection.weight
+        , %para65 : Ref[Tensor(F16)][1024, 1024]    # blocks.10.attention.projection.weight
+        , %para66 : Ref[Tensor(F16)][1024, 1024]    # blocks.10.attention.dense1.weight
+        , %para67 : Ref[Tensor(F16)][1024, 1024]    # blocks.10.attention.dense2.weight
+        , %para68 : Ref[Tensor(F16)][1024, 1024]    # blocks.10.attention.dense3.weight
+        , %para69 : Ref[Tensor(F16)][1024, 4096]    # blocks.10.output.mapping.weight
+        , %para70 : Ref[Tensor(F16)][4096, 1024]    # blocks.10.output.projection.weight
+        , %para71 : Ref[Tensor(F16)][1024, 1024]    # blocks.11.attention.projection.weight
+        , %para72 : Ref[Tensor(F16)][1024, 1024]    # blocks.11.attention.dense1.weight
+        , %para73 : Ref[Tensor(F16)][1024, 1024]    # blocks.11.attention.dense2.weight
+        , %para74 : Ref[Tensor(F16)][1024, 1024]    # blocks.11.attention.dense3.weight
+        , %para75 : Ref[Tensor(F16)][1024, 4096]    # blocks.11.output.mapping.weight
+        , %para76 : Ref[Tensor(F16)][4096, 1024]    # blocks.11.output.projection.weight
+        , %para77 : Ref[Tensor(F16)][1024, 1024]    # blocks.12.attention.projection.weight
+        , %para78 : Ref[Tensor(F16)][1024, 1024]    # blocks.12.attention.dense1.weight
+        , %para79 : Ref[Tensor(F16)][1024, 1024]    # blocks.12.attention.dense2.weight
+        , %para80 : Ref[Tensor(F16)][1024, 1024]    # blocks.12.attention.dense3.weight
+        , %para81 : Ref[Tensor(F16)][1024, 4096]    # blocks.12.output.mapping.weight
+        , %para82 : Ref[Tensor(F16)][4096, 1024]    # blocks.12.output.projection.weight
+        , %para83 : Ref[Tensor(F16)][1024, 1024]    # blocks.13.attention.projection.weight
+        , %para84 : Ref[Tensor(F16)][1024, 1024]    # blocks.13.attention.dense1.weight
+        , %para85 : Ref[Tensor(F16)][1024, 1024]    # blocks.13.attention.dense2.weight
+        , %para86 : Ref[Tensor(F16)][1024, 1024]    # blocks.13.attention.dense3.weight
+        , %para87 : Ref[Tensor(F16)][1024, 4096]    # blocks.13.output.mapping.weight
+        , %para88 : Ref[Tensor(F16)][4096, 1024]    # blocks.13.output.projection.weight
+        , %para89 : Ref[Tensor(F16)][1024, 1024]    # blocks.14.attention.projection.weight
+        , %para90 : Ref[Tensor(F16)][1024, 1024]    # blocks.14.attention.dense1.weight
+        , %para91 : Ref[Tensor(F16)][1024, 1024]    # blocks.14.attention.dense2.weight
+        , %para92 : Ref[Tensor(F16)][1024, 1024]    # blocks.14.attention.dense3.weight
+        , %para93 : Ref[Tensor(F16)][1024, 4096]    # blocks.14.output.mapping.weight
+        , %para94 : Ref[Tensor(F16)][4096, 1024]    # blocks.14.output.projection.weight
+        , %para95 : Ref[Tensor(F16)][1024, 1024]    # blocks.15.attention.projection.weight
+        , %para96 : Ref[Tensor(F16)][1024, 1024]    # blocks.15.attention.dense1.weight
+        , %para97 : Ref[Tensor(F16)][1024, 1024]    # blocks.15.attention.dense2.weight
+        , %para98 : Ref[Tensor(F16)][1024, 1024]    # blocks.15.attention.dense3.weight
+        , %para99 : Ref[Tensor(F16)][1024, 4096]    # blocks.15.output.mapping.weight
+        , %para100 : Ref[Tensor(F16)][4096, 1024]    # blocks.15.output.projection.weight
+        , %para101 : Ref[Tensor(F16)][1024, 1024]    # blocks.16.attention.projection.weight
+        , %para102 : Ref[Tensor(F16)][1024, 1024]    # blocks.16.attention.dense1.weight
+        , %para103 : Ref[Tensor(F16)][1024, 1024]    # blocks.16.attention.dense2.weight
+        , %para104 : Ref[Tensor(F16)][1024, 1024]    # blocks.16.attention.dense3.weight
+        , %para105 : Ref[Tensor(F16)][1024, 4096]    # blocks.16.output.mapping.weight
+        , %para106 : Ref[Tensor(F16)][4096, 1024]    # blocks.16.output.projection.weight
+        , %para107 : Ref[Tensor(F16)][1024, 1024]    # blocks.17.attention.projection.weight
+        , %para108 : Ref[Tensor(F16)][1024, 1024]    # blocks.17.attention.dense1.weight
+        , %para109 : Ref[Tensor(F16)][1024, 1024]    # blocks.17.attention.dense2.weight
+        , %para110 : Ref[Tensor(F16)][1024, 1024]    # blocks.17.attention.dense3.weight
+        , %para111 : Ref[Tensor(F16)][1024, 4096]    # blocks.17.output.mapping.weight
+        , %para112 : Ref[Tensor(F16)][4096, 1024]    # blocks.17.output.projection.weight
+        , %para113 : Ref[Tensor(F16)][1024, 1024]    # blocks.18.attention.projection.weight
+        , %para114 : Ref[Tensor(F16)][1024, 1024]    # blocks.18.attention.dense1.weight
+        , %para115 : Ref[Tensor(F16)][1024, 1024]    # blocks.18.attention.dense2.weight
+        , %para116 : Ref[Tensor(F16)][1024, 1024]    # blocks.18.attention.dense3.weight
+        , %para117 : Ref[Tensor(F16)][1024, 4096]    # blocks.18.output.mapping.weight
+        , %para118 : Ref[Tensor(F16)][4096, 1024]    # blocks.18.output.projection.weight
+        , %para119 : Ref[Tensor(F16)][1024, 1024]    # blocks.19.attention.projection.weight
+        , %para120 : Ref[Tensor(F16)][1024, 1024]    # blocks.19.attention.dense1.weight
+        , %para121 : Ref[Tensor(F16)][1024, 1024]    # blocks.19.attention.dense2.weight
+        , %para122 : Ref[Tensor(F16)][1024, 1024]    # blocks.19.attention.dense3.weight
+        , %para123 : Ref[Tensor(F16)][1024, 4096]    # blocks.19.output.mapping.weight
+        , %para124 : Ref[Tensor(F16)][4096, 1024]    # blocks.19.output.projection.weight
+        , %para125 : Ref[Tensor(F16)][1024, 1024]    # blocks.20.attention.projection.weight
+        , %para126 : Ref[Tensor(F16)][1024, 1024]    # blocks.20.attention.dense1.weight
+        , %para127 : Ref[Tensor(F16)][1024, 1024]    # blocks.20.attention.dense2.weight
+        , %para128 : Ref[Tensor(F16)][1024, 1024]    # blocks.20.attention.dense3.weight
+        , %para129 : Ref[Tensor(F16)][1024, 4096]    # blocks.20.output.mapping.weight
+        , %para130 : Ref[Tensor(F16)][4096, 1024]    # blocks.20.output.projection.weight
+        , %para131 : Ref[Tensor(F16)][1024, 1024]    # blocks.21.attention.projection.weight
+        , %para132 : Ref[Tensor(F16)][1024, 1024]    # blocks.21.attention.dense1.weight
+        , %para133 : Ref[Tensor(F16)][1024, 1024]    # blocks.21.attention.dense2.weight
+        , %para134 : Ref[Tensor(F16)][1024, 1024]    # blocks.21.attention.dense3.weight
+        , %para135 : Ref[Tensor(F16)][1024, 4096]    # blocks.21.output.mapping.weight
+        , %para136 : Ref[Tensor(F16)][4096, 1024]    # blocks.21.output.projection.weight
+        , %para137 : Ref[Tensor(F16)][1024, 1024]    # blocks.22.attention.projection.weight
+        , %para138 : Ref[Tensor(F16)][1024, 1024]    # blocks.22.attention.dense1.weight
+        , %para139 : Ref[Tensor(F16)][1024, 1024]    # blocks.22.attention.dense2.weight
+        , %para140 : Ref[Tensor(F16)][1024, 1024]    # blocks.22.attention.dense3.weight
+        , %para141 : Ref[Tensor(F16)][1024, 4096]    # blocks.22.output.mapping.weight
+        , %para142 : Ref[Tensor(F16)][4096, 1024]    # blocks.22.output.projection.weight
+        , %para143 : Ref[Tensor(F16)][1024, 1024]    # blocks.23.attention.projection.weight
+        , %para144 : Ref[Tensor(F16)][1024, 1024]    # blocks.23.attention.dense1.weight
+        , %para145 : Ref[Tensor(F16)][1024, 1024]    # blocks.23.attention.dense2.weight
+        , %para146 : Ref[Tensor(F16)][1024, 1024]    # blocks.23.attention.dense3.weight
+        , %para147 : Ref[Tensor(F16)][1024, 4096]    # blocks.23.output.mapping.weight
+        , %para148 : Ref[Tensor(F16)][4096, 1024]    # blocks.23.output.projection.weight
+        , %para149 : Ref[Tensor(F32)][1024]    # layernorm.gamma
+        , %para150 : Ref[Tensor(F32)][1024]    # layernorm.beta
+        , %para151 : Ref[Tensor(F32)][1024]    # blocks.0.layernorm1.gamma
+        , %para152 : Ref[Tensor(F32)][1024]    # blocks.0.layernorm1.beta
+        , %para153 : Ref[Tensor(F32)][1024]    # blocks.0.layernorm2.gamma
+        , %para154 : Ref[Tensor(F32)][1024]    # blocks.0.layernorm2.beta
+        , %para155 : Ref[Tensor(F16)][1024]    # blocks.0.attention.projection.bias
+        , %para156 : Ref[Tensor(F16)][1024]    # blocks.0.attention.dense1.bias
+        , %para157 : Ref[Tensor(F16)][1024]    # blocks.0.attention.dense2.bias
+        , %para158 : Ref[Tensor(F16)][1024]    # blocks.0.attention.dense3.bias
+        , %para159 : Ref[Tensor(F16)][4096]    # blocks.0.output.mapping.bias
+        , %para160 : Ref[Tensor(F16)][1024]    # blocks.0.output.projection.bias
+        , %para161 : Ref[Tensor(F32)][1024]    # blocks.1.layernorm1.gamma
+        , %para162 : Ref[Tensor(F32)][1024]    # blocks.1.layernorm1.beta
+        , %para163 : Ref[Tensor(F32)][1024]    # blocks.1.layernorm2.gamma
+        , %para164 : Ref[Tensor(F32)][1024]    # blocks.1.layernorm2.beta
+        , %para165 : Ref[Tensor(F16)][1024]    # blocks.1.attention.projection.bias
+        , %para166 : Ref[Tensor(F16)][1024]    # blocks.1.attention.dense1.bias
+        , %para167 : Ref[Tensor(F16)][1024]    # blocks.1.attention.dense2.bias
+        , %para168 : Ref[Tensor(F16)][1024]    # blocks.1.attention.dense3.bias
+        , %para169 : Ref[Tensor(F16)][4096]    # blocks.1.output.mapping.bias
+        , %para170 : Ref[Tensor(F16)][1024]    # blocks.1.output.projection.bias
+        , %para171 : Ref[Tensor(F32)][1024]    # blocks.2.layernorm1.gamma
+        , %para172 : Ref[Tensor(F32)][1024]    # blocks.2.layernorm1.beta
+        , %para173 : Ref[Tensor(F32)][1024]    # blocks.2.layernorm2.gamma
+        , %para174 : Ref[Tensor(F32)][1024]    # blocks.2.layernorm2.beta
+        , %para175 : Ref[Tensor(F16)][1024]    # blocks.2.attention.projection.bias
+        , %para176 : Ref[Tensor(F16)][1024]    # blocks.2.attention.dense1.bias
+        , %para177 : Ref[Tensor(F16)][1024]    # blocks.2.attention.dense2.bias
+        , %para178 : Ref[Tensor(F16)][1024]    # blocks.2.attention.dense3.bias
+        , %para179 : Ref[Tensor(F16)][4096]    # blocks.2.output.mapping.bias
+        , %para180 : Ref[Tensor(F16)][1024]    # blocks.2.output.projection.bias
+        , %para181 : Ref[Tensor(F32)][1024]    # blocks.3.layernorm1.gamma
+        , %para182 : Ref[Tensor(F32)][1024]    # blocks.3.layernorm1.beta
+        , %para183 : Ref[Tensor(F32)][1024]    # blocks.3.layernorm2.gamma
+        , %para184 : Ref[Tensor(F32)][1024]    # blocks.3.layernorm2.beta
+        , %para185 : Ref[Tensor(F16)][1024]    # blocks.3.attention.projection.bias
+        , %para186 : Ref[Tensor(F16)][1024]    # blocks.3.attention.dense1.bias
+        , %para187 : Ref[Tensor(F16)][1024]    # blocks.3.attention.dense2.bias
+        , %para188 : Ref[Tensor(F16)][1024]    # blocks.3.attention.dense3.bias
+        , %para189 : Ref[Tensor(F16)][4096]    # blocks.3.output.mapping.bias
+        , %para190 : Ref[Tensor(F16)][1024]    # blocks.3.output.projection.bias
+        , %para191 : Ref[Tensor(F32)][1024]    # blocks.4.layernorm1.gamma
+        , %para192 : Ref[Tensor(F32)][1024]    # blocks.4.layernorm1.beta
+        , %para193 : Ref[Tensor(F32)][1024]    # blocks.4.layernorm2.gamma
+        , %para194 : Ref[Tensor(F32)][1024]    # blocks.4.layernorm2.beta
+        , %para195 : Ref[Tensor(F16)][1024]    # blocks.4.attention.projection.bias
+        , %para196 : Ref[Tensor(F16)][1024]    # blocks.4.attention.dense1.bias
+        , %para197 : Ref[Tensor(F16)][1024]    # blocks.4.attention.dense2.bias
+        , %para198 : Ref[Tensor(F16)][1024]    # blocks.4.attention.dense3.bias
+        , %para199 : Ref[Tensor(F16)][4096]    # blocks.4.output.mapping.bias
+        , %para200 : Ref[Tensor(F16)][1024]    # blocks.4.output.projection.bias
+        , %para201 : Ref[Tensor(F32)][1024]    # blocks.5.layernorm1.gamma
+        , %para202 : Ref[Tensor(F32)][1024]    # blocks.5.layernorm1.beta
+        , %para203 : Ref[Tensor(F32)][1024]    # blocks.5.layernorm2.gamma
+        , %para204 : Ref[Tensor(F32)][1024]    # blocks.5.layernorm2.beta
+        , %para205 : Ref[Tensor(F16)][1024]    # blocks.5.attention.projection.bias
+        , %para206 : Ref[Tensor(F16)][1024]    # blocks.5.attention.dense1.bias
+        , %para207 : Ref[Tensor(F16)][1024]    # blocks.5.attention.dense2.bias
+        , %para208 : Ref[Tensor(F16)][1024]    # blocks.5.attention.dense3.bias
+        , %para209 : Ref[Tensor(F16)][4096]    # blocks.5.output.mapping.bias
+        , %para210 : Ref[Tensor(F16)][1024]    # blocks.5.output.projection.bias
+        , %para211 : Ref[Tensor(F32)][1024]    # blocks.6.layernorm1.gamma
+        , %para212 : Ref[Tensor(F32)][1024]    # blocks.6.layernorm1.beta
+        , %para213 : Ref[Tensor(F32)][1024]    # blocks.6.layernorm2.gamma
+        , %para214 : Ref[Tensor(F32)][1024]    # blocks.6.layernorm2.beta
+        , %para215 : Ref[Tensor(F16)][1024]    # blocks.6.attention.projection.bias
+        , %para216 : Ref[Tensor(F16)][1024]    # blocks.6.attention.dense1.bias
+        , %para217 : Ref[Tensor(F16)][1024]    # blocks.6.attention.dense2.bias
+        , %para218 : Ref[Tensor(F16)][1024]    # blocks.6.attention.dense3.bias
+        , %para219 : Ref[Tensor(F16)][4096]    # blocks.6.output.mapping.bias
+        , %para220 : Ref[Tensor(F16)][1024]    # blocks.6.output.projection.bias
+        , %para221 : Ref[Tensor(F32)][1024]    # blocks.7.layernorm1.gamma
+        , %para222 : Ref[Tensor(F32)][1024]    # blocks.7.layernorm1.beta
+        , %para223 : Ref[Tensor(F32)][1024]    # blocks.7.layernorm2.gamma
+        , %para224 : Ref[Tensor(F32)][1024]    # blocks.7.layernorm2.beta
+        , %para225 : Ref[Tensor(F16)][1024]    # blocks.7.attention.projection.bias
+        , %para226 : Ref[Tensor(F16)][1024]    # blocks.7.attention.dense1.bias
+        , %para227 : Ref[Tensor(F16)][1024]    # blocks.7.attention.dense2.bias
+        , %para228 : Ref[Tensor(F16)][1024]    # blocks.7.attention.dense3.bias
+        , %para229 : Ref[Tensor(F16)][4096]    # blocks.7.output.mapping.bias
+        , %para230 : Ref[Tensor(F16)][1024]    # blocks.7.output.projection.bias
+        , %para231 : Ref[Tensor(F32)][1024]    # blocks.8.layernorm1.gamma
+        , %para232 : Ref[Tensor(F32)][1024]    # blocks.8.layernorm1.beta
+        , %para233 : Ref[Tensor(F32)][1024]    # blocks.8.layernorm2.gamma
+        , %para234 : Ref[Tensor(F32)][1024]    # blocks.8.layernorm2.beta
+        , %para235 : Ref[Tensor(F16)][1024]    # blocks.8.attention.projection.bias
+        , %para236 : Ref[Tensor(F16)][1024]    # blocks.8.attention.dense1.bias
+        , %para237 : Ref[Tensor(F16)][1024]    # blocks.8.attention.dense2.bias
+        , %para238 : Ref[Tensor(F16)][1024]    # blocks.8.attention.dense3.bias
+        , %para239 : Ref[Tensor(F16)][4096]    # blocks.8.output.mapping.bias
+        , %para240 : Ref[Tensor(F16)][1024]    # blocks.8.output.projection.bias
+        , %para241 : Ref[Tensor(F32)][1024]    # blocks.9.layernorm1.gamma
+        , %para242 : Ref[Tensor(F32)][1024]    # blocks.9.layernorm1.beta
+        , %para243 : Ref[Tensor(F32)][1024]    # blocks.9.layernorm2.gamma
+        , %para244 : Ref[Tensor(F32)][1024]    # blocks.9.layernorm2.beta
+        , %para245 : Ref[Tensor(F16)][1024]    # blocks.9.attention.projection.bias
+        , %para246 : Ref[Tensor(F16)][1024]    # blocks.9.attention.dense1.bias
+        , %para247 : Ref[Tensor(F16)][1024]    # blocks.9.attention.dense2.bias
+        , %para248 : Ref[Tensor(F16)][1024]    # blocks.9.attention.dense3.bias
+        , %para249 : Ref[Tensor(F16)][4096]    # blocks.9.output.mapping.bias
+        , %para250 : Ref[Tensor(F16)][1024]    # blocks.9.output.projection.bias
+        , %para251 : Ref[Tensor(F32)][1024]    # blocks.10.layernorm1.gamma
+        , %para252 : Ref[Tensor(F32)][1024]    # blocks.10.layernorm1.beta
+        , %para253 : Ref[Tensor(F32)][1024]    # blocks.10.layernorm2.gamma
+        , %para254 : Ref[Tensor(F32)][1024]    # blocks.10.layernorm2.beta
+        , %para255 : Ref[Tensor(F16)][1024]    # blocks.10.attention.projection.bias
+        , %para256 : Ref[Tensor(F16)][1024]    # blocks.10.attention.dense1.bias
+        , %para257 : Ref[Tensor(F16)][1024]    # blocks.10.attention.dense2.bias
+        , %para258 : Ref[Tensor(F16)][1024]    # blocks.10.attention.dense3.bias
+        , %para259 : Ref[Tensor(F16)][4096]    # blocks.10.output.mapping.bias
+        , %para260 : Ref[Tensor(F16)][1024]    # blocks.10.output.projection.bias
+        , %para261 : Ref[Tensor(F32)][1024]    # blocks.11.layernorm1.gamma
+        , %para262 : Ref[Tensor(F32)][1024]    # blocks.11.layernorm1.beta
+        , %para263 : Ref[Tensor(F32)][1024]    # blocks.11.layernorm2.gamma
+        , %para264 : Ref[Tensor(F32)][1024]    # blocks.11.layernorm2.beta
+        , %para265 : Ref[Tensor(F16)][1024]    # blocks.11.attention.projection.bias
+        , %para266 : Ref[Tensor(F16)][1024]    # blocks.11.attention.dense1.bias
+        , %para267 : Ref[Tensor(F16)][1024]    # blocks.11.attention.dense2.bias
+        , %para268 : Ref[Tensor(F16)][1024]    # blocks.11.attention.dense3.bias
+        , %para269 : Ref[Tensor(F16)][4096]    # blocks.11.output.mapping.bias
+        , %para270 : Ref[Tensor(F16)][1024]    # blocks.11.output.projection.bias
+        , %para271 : Ref[Tensor(F32)][1024]    # blocks.12.layernorm1.gamma
+        , %para272 : Ref[Tensor(F32)][1024]    # blocks.12.layernorm1.beta
+        , %para273 : Ref[Tensor(F32)][1024]    # blocks.12.layernorm2.gamma
+        , %para274 : Ref[Tensor(F32)][1024]    # blocks.12.layernorm2.beta
+        , %para275 : Ref[Tensor(F16)][1024]    # blocks.12.attention.projection.bias
+        , %para276 : Ref[Tensor(F16)][1024]    # blocks.12.attention.dense1.bias
+        , %para277 : Ref[Tensor(F16)][1024]    # blocks.12.attention.dense2.bias
+        , %para278 : Ref[Tensor(F16)][1024]    # blocks.12.attention.dense3.bias
+        , %para279 : Ref[Tensor(F16)][4096]    # blocks.12.output.mapping.bias
+        , %para280 : Ref[Tensor(F16)][1024]    # blocks.12.output.projection.bias
+        , %para281 : Ref[Tensor(F32)][1024]    # blocks.13.layernorm1.gamma
+        , %para282 : Ref[Tensor(F32)][1024]    # blocks.13.layernorm1.beta
+        , %para283 : Ref[Tensor(F32)][1024]    # blocks.13.layernorm2.gamma
+        , %para284 : Ref[Tensor(F32)][1024]    # blocks.13.layernorm2.beta
+        , %para285 : Ref[Tensor(F16)][1024]    # blocks.13.attention.projection.bias
+        , %para286 : Ref[Tensor(F16)][1024]    # blocks.13.attention.dense1.bias
+        , %para287 : Ref[Tensor(F16)][1024]    # blocks.13.attention.dense2.bias
+        , %para288 : Ref[Tensor(F16)][1024]    # blocks.13.attention.dense3.bias
+        , %para289 : Ref[Tensor(F16)][4096]    # blocks.13.output.mapping.bias
+        , %para290 : Ref[Tensor(F16)][1024]    # blocks.13.output.projection.bias
+        , %para291 : Ref[Tensor(F32)][1024]    # blocks.14.layernorm1.gamma
+        , %para292 : Ref[Tensor(F32)][1024]    # blocks.14.layernorm1.beta
+        , %para293 : Ref[Tensor(F32)][1024]    # blocks.14.layernorm2.gamma
+        , %para294 : Ref[Tensor(F32)][1024]    # blocks.14.layernorm2.beta
+        , %para295 : Ref[Tensor(F16)][1024]    # blocks.14.attention.projection.bias
+        , %para296 : Ref[Tensor(F16)][1024]    # blocks.14.attention.dense1.bias
+        , %para297 : Ref[Tensor(F16)][1024]    # blocks.14.attention.dense2.bias
+        , %para298 : Ref[Tensor(F16)][1024]    # blocks.14.attention.dense3.bias
+        , %para299 : Ref[Tensor(F16)][4096]    # blocks.14.output.mapping.bias
+        , %para300 : Ref[Tensor(F16)][1024]    # blocks.14.output.projection.bias
+        , %para301 : Ref[Tensor(F32)][1024]    # blocks.15.layernorm1.gamma
+        , %para302 : Ref[Tensor(F32)][1024]    # blocks.15.layernorm1.beta
+        , %para303 : Ref[Tensor(F32)][1024]    # blocks.15.layernorm2.gamma
+        , %para304 : Ref[Tensor(F32)][1024]    # blocks.15.layernorm2.beta
+        , %para305 : Ref[Tensor(F16)][1024]    # blocks.15.attention.projection.bias
+        , %para306 : Ref[Tensor(F16)][1024]    # blocks.15.attention.dense1.bias
+        , %para307 : Ref[Tensor(F16)][1024]    # blocks.15.attention.dense2.bias
+        , %para308 : Ref[Tensor(F16)][1024]    # blocks.15.attention.dense3.bias
+        , %para309 : Ref[Tensor(F16)][4096]    # blocks.15.output.mapping.bias
+        , %para310 : Ref[Tensor(F16)][1024]    # blocks.15.output.projection.bias
+        , %para311 : Ref[Tensor(F32)][1024]    # blocks.16.layernorm1.gamma
+        , %para312 : Ref[Tensor(F32)][1024]    # blocks.16.layernorm1.beta
+        , %para313 : Ref[Tensor(F32)][1024]    # blocks.16.layernorm2.gamma
+        , %para314 : Ref[Tensor(F32)][1024]    # blocks.16.layernorm2.beta
+        , %para315 : Ref[Tensor(F16)][1024]    # blocks.16.attention.projection.bias
+        , %para316 : Ref[Tensor(F16)][1024]    # blocks.16.attention.dense1.bias
+        , %para317 : Ref[Tensor(F16)][1024]    # blocks.16.attention.dense2.bias
+        , %para318 : Ref[Tensor(F16)][1024]    # blocks.16.attention.dense3.bias
+        , %para319 : Ref[Tensor(F16)][4096]    # blocks.16.output.mapping.bias
+        , %para320 : Ref[Tensor(F16)][1024]    # blocks.16.output.projection.bias
+        , %para321 : Ref[Tensor(F32)][1024]    # blocks.17.layernorm1.gamma
+        , %para322 : Ref[Tensor(F32)][1024]    # blocks.17.layernorm1.beta
+        , %para323 : Ref[Tensor(F32)][1024]    # blocks.17.layernorm2.gamma
+        , %para324 : Ref[Tensor(F32)][1024]    # blocks.17.layernorm2.beta
+        , %para325 : Ref[Tensor(F16)][1024]    # blocks.17.attention.projection.bias
+        , %para326 : Ref[Tensor(F16)][1024]    # blocks.17.attention.dense1.bias
+        , %para327 : Ref[Tensor(F16)][1024]    # blocks.17.attention.dense2.bias
+        , %para328 : Ref[Tensor(F16)][1024]    # blocks.17.attention.dense3.bias
+        , %para329 : Ref[Tensor(F16)][4096]    # blocks.17.output.mapping.bias
+        , %para330 : Ref[Tensor(F16)][1024]    # blocks.17.output.projection.bias
+        , %para331 : Ref[Tensor(F32)][1024]    # blocks.18.layernorm1.gamma
+        , %para332 : Ref[Tensor(F32)][1024]    # blocks.18.layernorm1.beta
+        , %para333 : Ref[Tensor(F32)][1024]    # blocks.18.layernorm2.gamma
+        , %para334 : Ref[Tensor(F32)][1024]    # blocks.18.layernorm2.beta
+        , %para335 : Ref[Tensor(F16)][1024]    # blocks.18.attention.projection.bias
+        , %para336 : Ref[Tensor(F16)][1024]    # blocks.18.attention.dense1.bias
+        , %para337 : Ref[Tensor(F16)][1024]    # blocks.18.attention.dense2.bias
+        , %para338 : Ref[Tensor(F16)][1024]    # blocks.18.attention.dense3.bias
+        , %para339 : Ref[Tensor(F16)][4096]    # blocks.18.output.mapping.bias
+        , %para340 : Ref[Tensor(F16)][1024]    # blocks.18.output.projection.bias
+        , %para341 : Ref[Tensor(F32)][1024]    # blocks.19.layernorm1.gamma
+        , %para342 : Ref[Tensor(F32)][1024]    # blocks.19.layernorm1.beta
+        , %para343 : Ref[Tensor(F32)][1024]    # blocks.19.layernorm2.gamma
+        , %para344 : Ref[Tensor(F32)][1024]    # blocks.19.layernorm2.beta
+        , %para345 : Ref[Tensor(F16)][1024]    # blocks.19.attention.projection.bias
+        , %para346 : Ref[Tensor(F16)][1024]    # blocks.19.attention.dense1.bias
+        , %para347 : Ref[Tensor(F16)][1024]    # blocks.19.attention.dense2.bias
+        , %para348 : Ref[Tensor(F16)][1024]    # blocks.19.attention.dense3.bias
+        , %para349 : Ref[Tensor(F16)][4096]    # blocks.19.output.mapping.bias
+        , %para350 : Ref[Tensor(F16)][1024]    # blocks.19.output.projection.bias
+        , %para351 : Ref[Tensor(F32)][1024]    # blocks.20.layernorm1.gamma
+        , %para352 : Ref[Tensor(F32)][1024]    # blocks.20.layernorm1.beta
+        , %para353 : Ref[Tensor(F32)][1024]    # blocks.20.layernorm2.gamma
+        , %para354 : Ref[Tensor(F32)][1024]    # blocks.20.layernorm2.beta
+        , %para355 : Ref[Tensor(F16)][1024]    # blocks.20.attention.projection.bias
+        , %para356 : Ref[Tensor(F16)][1024]    # blocks.20.attention.dense1.bias
+        , %para357 : Ref[Tensor(F16)][1024]    # blocks.20.attention.dense2.bias
+        , %para358 : Ref[Tensor(F16)][1024]    # blocks.20.attention.dense3.bias
+        , %para359 : Ref[Tensor(F16)][4096]    # blocks.20.output.mapping.bias
+        , %para360 : Ref[Tensor(F16)][1024]    # blocks.20.output.projection.bias
+        , %para361 : Ref[Tensor(F32)][1024]    # blocks.21.layernorm1.gamma
+        , %para362 : Ref[Tensor(F32)][1024]    # blocks.21.layernorm1.beta
+        , %para363 : Ref[Tensor(F32)][1024]    # blocks.21.layernorm2.gamma
+        , %para364 : Ref[Tensor(F32)][1024]    # blocks.21.layernorm2.beta
+        , %para365 : Ref[Tensor(F16)][1024]    # blocks.21.attention.projection.bias
+        , %para366 : Ref[Tensor(F16)][1024]    # blocks.21.attention.dense1.bias
+        , %para367 : Ref[Tensor(F16)][1024]    # blocks.21.attention.dense2.bias
+        , %para368 : Ref[Tensor(F16)][1024]    # blocks.21.attention.dense3.bias
+        , %para369 : Ref[Tensor(F16)][4096]    # blocks.21.output.mapping.bias
+        , %para370 : Ref[Tensor(F16)][1024]    # blocks.21.output.projection.bias
+        , %para371 : Ref[Tensor(F32)][1024]    # blocks.22.layernorm1.gamma
+        , %para372 : Ref[Tensor(F32)][1024]    # blocks.22.layernorm1.beta
+        , %para373 : Ref[Tensor(F32)][1024]    # blocks.22.layernorm2.gamma
+        , %para374 : Ref[Tensor(F32)][1024]    # blocks.22.layernorm2.beta
+        , %para375 : Ref[Tensor(F16)][1024]    # blocks.22.attention.projection.bias
+        , %para376 : Ref[Tensor(F16)][1024]    # blocks.22.attention.dense1.bias
+        , %para377 : Ref[Tensor(F16)][1024]    # blocks.22.attention.dense2.bias
+        , %para378 : Ref[Tensor(F16)][1024]    # blocks.22.attention.dense3.bias
+        , %para379 : Ref[Tensor(F16)][4096]    # blocks.22.output.mapping.bias
+        , %para380 : Ref[Tensor(F16)][1024]    # blocks.22.output.projection.bias
+        , %para381 : Ref[Tensor(F32)][1024]    # blocks.23.layernorm1.gamma
+        , %para382 : Ref[Tensor(F32)][1024]    # blocks.23.layernorm1.beta
+        , %para383 : Ref[Tensor(F32)][1024]    # blocks.23.layernorm2.gamma
+        , %para384 : Ref[Tensor(F32)][1024]    # blocks.23.layernorm2.beta
+        , %para385 : Ref[Tensor(F16)][1024]    # blocks.23.attention.projection.bias
+        , %para386 : Ref[Tensor(F16)][1024]    # blocks.23.attention.dense1.bias
+        , %para387 : Ref[Tensor(F16)][1024]    # blocks.23.attention.dense2.bias
+        , %para388 : Ref[Tensor(F16)][1024]    # blocks.23.attention.dense3.bias
+        , %para389 : Ref[Tensor(F16)][4096]    # blocks.23.output.mapping.bias
+        , %para390 : Ref[Tensor(F16)][1024]    # blocks.23.output.projection.bias
+        , %para391 : Ref[Tensor(I32)][]    # current_iterator_step
+        , %para392 : Ref[Tensor(F32)][50257, 1024]    # adam_m.embedding.word_embedding.embedding_table
+        , %para393 : Ref[Tensor(F32)][2048, 1024]    # adam_m.embedding.position_embedding.embedding_table
+        , %para394 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.0.attention.projection.weight
+        , %para395 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.0.attention.dense1.weight
+        , %para396 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.0.attention.dense2.weight
+        , %para397 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.0.attention.dense3.weight
+        , %para398 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.0.output.mapping.weight
+        , %para399 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.0.output.projection.weight
+        , %para400 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.1.attention.projection.weight
+        , %para401 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.1.attention.dense1.weight
+        , %para402 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.1.attention.dense2.weight
+        , %para403 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.1.attention.dense3.weight
+        , %para404 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.1.output.mapping.weight
+        , %para405 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.1.output.projection.weight
+        , %para406 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.2.attention.projection.weight
+        , %para407 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.2.attention.dense1.weight
+        , %para408 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.2.attention.dense2.weight
+        , %para409 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.2.attention.dense3.weight
+        , %para410 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.2.output.mapping.weight
+        , %para411 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.2.output.projection.weight
+        , %para412 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.3.attention.projection.weight
+        , %para413 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.3.attention.dense1.weight
+        , %para414 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.3.attention.dense2.weight
+        , %para415 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.3.attention.dense3.weight
+        , %para416 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.3.output.mapping.weight
+        , %para417 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.3.output.projection.weight
+        , %para418 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.4.attention.projection.weight
+        , %para419 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.4.attention.dense1.weight
+        , %para420 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.4.attention.dense2.weight
+        , %para421 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.4.attention.dense3.weight
+        , %para422 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.4.output.mapping.weight
+        , %para423 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.4.output.projection.weight
+        , %para424 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.5.attention.projection.weight
+        , %para425 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.5.attention.dense1.weight
+        , %para426 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.5.attention.dense2.weight
+        , %para427 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.5.attention.dense3.weight
+        , %para428 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.5.output.mapping.weight
+        , %para429 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.5.output.projection.weight
+        , %para430 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.6.attention.projection.weight
+        , %para431 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.6.attention.dense1.weight
+        , %para432 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.6.attention.dense2.weight
+        , %para433 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.6.attention.dense3.weight
+        , %para434 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.6.output.mapping.weight
+        , %para435 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.6.output.projection.weight
+        , %para436 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.7.attention.projection.weight
+        , %para437 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.7.attention.dense1.weight
+        , %para438 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.7.attention.dense2.weight
+        , %para439 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.7.attention.dense3.weight
+        , %para440 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.7.output.mapping.weight
+        , %para441 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.7.output.projection.weight
+        , %para442 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.8.attention.projection.weight
+        , %para443 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.8.attention.dense1.weight
+        , %para444 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.8.attention.dense2.weight
+        , %para445 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.8.attention.dense3.weight
+        , %para446 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.8.output.mapping.weight
+        , %para447 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.8.output.projection.weight
+        , %para448 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.9.attention.projection.weight
+        , %para449 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.9.attention.dense1.weight
+        , %para450 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.9.attention.dense2.weight
+        , %para451 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.9.attention.dense3.weight
+        , %para452 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.9.output.mapping.weight
+        , %para453 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.9.output.projection.weight
+        , %para454 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.10.attention.projection.weight
+        , %para455 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.10.attention.dense1.weight
+        , %para456 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.10.attention.dense2.weight
+        , %para457 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.10.attention.dense3.weight
+        , %para458 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.10.output.mapping.weight
+        , %para459 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.10.output.projection.weight
+        , %para460 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.11.attention.projection.weight
+        , %para461 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.11.attention.dense1.weight
+        , %para462 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.11.attention.dense2.weight
+        , %para463 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.11.attention.dense3.weight
+        , %para464 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.11.output.mapping.weight
+        , %para465 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.11.output.projection.weight
+        , %para466 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.12.attention.projection.weight
+        , %para467 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.12.attention.dense1.weight
+        , %para468 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.12.attention.dense2.weight
+        , %para469 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.12.attention.dense3.weight
+        , %para470 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.12.output.mapping.weight
+        , %para471 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.12.output.projection.weight
+        , %para472 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.13.attention.projection.weight
+        , %para473 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.13.attention.dense1.weight
+        , %para474 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.13.attention.dense2.weight
+        , %para475 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.13.attention.dense3.weight
+        , %para476 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.13.output.mapping.weight
+        , %para477 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.13.output.projection.weight
+        , %para478 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.14.attention.projection.weight
+        , %para479 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.14.attention.dense1.weight
+        , %para480 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.14.attention.dense2.weight
+        , %para481 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.14.attention.dense3.weight
+        , %para482 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.14.output.mapping.weight
+        , %para483 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.14.output.projection.weight
+        , %para484 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.15.attention.projection.weight
+        , %para485 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.15.attention.dense1.weight
+        , %para486 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.15.attention.dense2.weight
+        , %para487 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.15.attention.dense3.weight
+        , %para488 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.15.output.mapping.weight
+        , %para489 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.15.output.projection.weight
+        , %para490 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.16.attention.projection.weight
+        , %para491 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.16.attention.dense1.weight
+        , %para492 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.16.attention.dense2.weight
+        , %para493 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.16.attention.dense3.weight
+        , %para494 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.16.output.mapping.weight
+        , %para495 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.16.output.projection.weight
+        , %para496 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.17.attention.projection.weight
+        , %para497 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.17.attention.dense1.weight
+        , %para498 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.17.attention.dense2.weight
+        , %para499 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.17.attention.dense3.weight
+        , %para500 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.17.output.mapping.weight
+        , %para501 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.17.output.projection.weight
+        , %para502 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.18.attention.projection.weight
+        , %para503 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.18.attention.dense1.weight
+        , %para504 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.18.attention.dense2.weight
+        , %para505 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.18.attention.dense3.weight
+        , %para506 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.18.output.mapping.weight
+        , %para507 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.18.output.projection.weight
+        , %para508 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.19.attention.projection.weight
+        , %para509 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.19.attention.dense1.weight
+        , %para510 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.19.attention.dense2.weight
+        , %para511 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.19.attention.dense3.weight
+        , %para512 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.19.output.mapping.weight
+        , %para513 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.19.output.projection.weight
+        , %para514 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.20.attention.projection.weight
+        , %para515 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.20.attention.dense1.weight
+        , %para516 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.20.attention.dense2.weight
+        , %para517 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.20.attention.dense3.weight
+        , %para518 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.20.output.mapping.weight
+        , %para519 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.20.output.projection.weight
+        , %para520 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.21.attention.projection.weight
+        , %para521 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.21.attention.dense1.weight
+        , %para522 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.21.attention.dense2.weight
+        , %para523 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.21.attention.dense3.weight
+        , %para524 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.21.output.mapping.weight
+        , %para525 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.21.output.projection.weight
+        , %para526 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.22.attention.projection.weight
+        , %para527 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.22.attention.dense1.weight
+        , %para528 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.22.attention.dense2.weight
+        , %para529 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.22.attention.dense3.weight
+        , %para530 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.22.output.mapping.weight
+        , %para531 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.22.output.projection.weight
+        , %para532 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.23.attention.projection.weight
+        , %para533 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.23.attention.dense1.weight
+        , %para534 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.23.attention.dense2.weight
+        , %para535 : Ref[Tensor(F32)][1024, 1024]    # adam_m.blocks.23.attention.dense3.weight
+        , %para536 : Ref[Tensor(F32)][1024, 4096]    # adam_m.blocks.23.output.mapping.weight
+        , %para537 : Ref[Tensor(F32)][4096, 1024]    # adam_m.blocks.23.output.projection.weight
+        , %para538 : Ref[Tensor(F32)][1024]    # adam_m.layernorm.gamma
+        , %para539 : Ref[Tensor(F32)][1024]    # adam_m.layernorm.beta
+        , %para540 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.layernorm1.gamma
+        , %para541 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.layernorm1.beta
+        , %para542 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.layernorm2.gamma
+        , %para543 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.layernorm2.beta
+        , %para544 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.attention.projection.bias
+        , %para545 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.attention.dense1.bias
+        , %para546 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.attention.dense2.bias
+        , %para547 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.attention.dense3.bias
+        , %para548 : Ref[Tensor(F32)][4096]    # adam_m.blocks.0.output.mapping.bias
+        , %para549 : Ref[Tensor(F32)][1024]    # adam_m.blocks.0.output.projection.bias
+        , %para550 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.layernorm1.gamma
+        , %para551 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.layernorm1.beta
+        , %para552 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.layernorm2.gamma
+        , %para553 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.layernorm2.beta
+        , %para554 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.attention.projection.bias
+        , %para555 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.attention.dense1.bias
+        , %para556 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.attention.dense2.bias
+        , %para557 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.attention.dense3.bias
+        , %para558 : Ref[Tensor(F32)][4096]    # adam_m.blocks.1.output.mapping.bias
+        , %para559 : Ref[Tensor(F32)][1024]    # adam_m.blocks.1.output.projection.bias
+        , %para560 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.layernorm1.gamma
+        , %para561 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.layernorm1.beta
+        , %para562 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.layernorm2.gamma
+        , %para563 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.layernorm2.beta
+        , %para564 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.attention.projection.bias
+        , %para565 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.attention.dense1.bias
+        , %para566 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.attention.dense2.bias
+        , %para567 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.attention.dense3.bias
+        , %para568 : Ref[Tensor(F32)][4096]    # adam_m.blocks.2.output.mapping.bias
+        , %para569 : Ref[Tensor(F32)][1024]    # adam_m.blocks.2.output.projection.bias
+        , %para570 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.layernorm1.gamma
+        , %para571 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.layernorm1.beta
+        , %para572 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.layernorm2.gamma
+        , %para573 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.layernorm2.beta
+        , %para574 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.attention.projection.bias
+        , %para575 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.attention.dense1.bias
+        , %para576 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.attention.dense2.bias
+        , %para577 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.attention.dense3.bias
+        , %para578 : Ref[Tensor(F32)][4096]    # adam_m.blocks.3.output.mapping.bias
+        , %para579 : Ref[Tensor(F32)][1024]    # adam_m.blocks.3.output.projection.bias
+        , %para580 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.layernorm1.gamma
+        , %para581 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.layernorm1.beta
+        , %para582 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.layernorm2.gamma
+        , %para583 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.layernorm2.beta
+        , %para584 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.attention.projection.bias
+        , %para585 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.attention.dense1.bias
+        , %para586 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.attention.dense2.bias
+        , %para587 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.attention.dense3.bias
+        , %para588 : Ref[Tensor(F32)][4096]    # adam_m.blocks.4.output.mapping.bias
+        , %para589 : Ref[Tensor(F32)][1024]    # adam_m.blocks.4.output.projection.bias
+        , %para590 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.layernorm1.gamma
+        , %para591 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.layernorm1.beta
+        , %para592 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.layernorm2.gamma
+        , %para593 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.layernorm2.beta
+        , %para594 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.attention.projection.bias
+        , %para595 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.attention.dense1.bias
+        , %para596 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.attention.dense2.bias
+        , %para597 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.attention.dense3.bias
+        , %para598 : Ref[Tensor(F32)][4096]    # adam_m.blocks.5.output.mapping.bias
+        , %para599 : Ref[Tensor(F32)][1024]    # adam_m.blocks.5.output.projection.bias
+        , %para600 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.layernorm1.gamma
+        , %para601 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.layernorm1.beta
+        , %para602 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.layernorm2.gamma
+        , %para603 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.layernorm2.beta
+        , %para604 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.attention.projection.bias
+        , %para605 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.attention.dense1.bias
+        , %para606 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.attention.dense2.bias
+        , %para607 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.attention.dense3.bias
+        , %para608 : Ref[Tensor(F32)][4096]    # adam_m.blocks.6.output.mapping.bias
+        , %para609 : Ref[Tensor(F32)][1024]    # adam_m.blocks.6.output.projection.bias
+        , %para610 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.layernorm1.gamma
+        , %para611 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.layernorm1.beta
+        , %para612 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.layernorm2.gamma
+        , %para613 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.layernorm2.beta
+        , %para614 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.attention.projection.bias
+        , %para615 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.attention.dense1.bias
+        , %para616 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.attention.dense2.bias
+        , %para617 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.attention.dense3.bias
+        , %para618 : Ref[Tensor(F32)][4096]    # adam_m.blocks.7.output.mapping.bias
+        , %para619 : Ref[Tensor(F32)][1024]    # adam_m.blocks.7.output.projection.bias
+        , %para620 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.layernorm1.gamma
+        , %para621 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.layernorm1.beta
+        , %para622 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.layernorm2.gamma
+        , %para623 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.layernorm2.beta
+        , %para624 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.attention.projection.bias
+        , %para625 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.attention.dense1.bias
+        , %para626 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.attention.dense2.bias
+        , %para627 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.attention.dense3.bias
+        , %para628 : Ref[Tensor(F32)][4096]    # adam_m.blocks.8.output.mapping.bias
+        , %para629 : Ref[Tensor(F32)][1024]    # adam_m.blocks.8.output.projection.bias
+        , %para630 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.layernorm1.gamma
+        , %para631 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.layernorm1.beta
+        , %para632 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.layernorm2.gamma
+        , %para633 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.layernorm2.beta
+        , %para634 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.attention.projection.bias
+        , %para635 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.attention.dense1.bias
+        , %para636 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.attention.dense2.bias
+        , %para637 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.attention.dense3.bias
+        , %para638 : Ref[Tensor(F32)][4096]    # adam_m.blocks.9.output.mapping.bias
+        , %para639 : Ref[Tensor(F32)][1024]    # adam_m.blocks.9.output.projection.bias
+        , %para640 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.layernorm1.gamma
+        , %para641 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.layernorm1.beta
+        , %para642 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.layernorm2.gamma
+        , %para643 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.layernorm2.beta
+        , %para644 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.attention.projection.bias
+        , %para645 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.attention.dense1.bias
+        , %para646 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.attention.dense2.bias
+        , %para647 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.attention.dense3.bias
+        , %para648 : Ref[Tensor(F32)][4096]    # adam_m.blocks.10.output.mapping.bias
+        , %para649 : Ref[Tensor(F32)][1024]    # adam_m.blocks.10.output.projection.bias
+        , %para650 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.layernorm1.gamma
+        , %para651 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.layernorm1.beta
+        , %para652 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.layernorm2.gamma
+        , %para653 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.layernorm2.beta
+        , %para654 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.attention.projection.bias
+        , %para655 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.attention.dense1.bias
+        , %para656 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.attention.dense2.bias
+        , %para657 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.attention.dense3.bias
+        , %para658 : Ref[Tensor(F32)][4096]    # adam_m.blocks.11.output.mapping.bias
+        , %para659 : Ref[Tensor(F32)][1024]    # adam_m.blocks.11.output.projection.bias
+        , %para660 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.layernorm1.gamma
+        , %para661 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.layernorm1.beta
+        , %para662 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.layernorm2.gamma
+        , %para663 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.layernorm2.beta
+        , %para664 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.attention.projection.bias
+        , %para665 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.attention.dense1.bias
+        , %para666 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.attention.dense2.bias
+        , %para667 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.attention.dense3.bias
+        , %para668 : Ref[Tensor(F32)][4096]    # adam_m.blocks.12.output.mapping.bias
+        , %para669 : Ref[Tensor(F32)][1024]    # adam_m.blocks.12.output.projection.bias
+        , %para670 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.layernorm1.gamma
+        , %para671 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.layernorm1.beta
+        , %para672 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.layernorm2.gamma
+        , %para673 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.layernorm2.beta
+        , %para674 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.attention.projection.bias
+        , %para675 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.attention.dense1.bias
+        , %para676 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.attention.dense2.bias
+        , %para677 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.attention.dense3.bias
+        , %para678 : Ref[Tensor(F32)][4096]    # adam_m.blocks.13.output.mapping.bias
+        , %para679 : Ref[Tensor(F32)][1024]    # adam_m.blocks.13.output.projection.bias
+        , %para680 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.layernorm1.gamma
+        , %para681 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.layernorm1.beta
+        , %para682 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.layernorm2.gamma
+        , %para683 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.layernorm2.beta
+        , %para684 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.attention.projection.bias
+        , %para685 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.attention.dense1.bias
+        , %para686 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.attention.dense2.bias
+        , %para687 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.attention.dense3.bias
+        , %para688 : Ref[Tensor(F32)][4096]    # adam_m.blocks.14.output.mapping.bias
+        , %para689 : Ref[Tensor(F32)][1024]    # adam_m.blocks.14.output.projection.bias
+        , %para690 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.layernorm1.gamma
+        , %para691 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.layernorm1.beta
+        , %para692 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.layernorm2.gamma
+        , %para693 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.layernorm2.beta
+        , %para694 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.attention.projection.bias
+        , %para695 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.attention.dense1.bias
+        , %para696 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.attention.dense2.bias
+        , %para697 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.attention.dense3.bias
+        , %para698 : Ref[Tensor(F32)][4096]    # adam_m.blocks.15.output.mapping.bias
+        , %para699 : Ref[Tensor(F32)][1024]    # adam_m.blocks.15.output.projection.bias
+        , %para700 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.layernorm1.gamma
+        , %para701 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.layernorm1.beta
+        , %para702 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.layernorm2.gamma
+        , %para703 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.layernorm2.beta
+        , %para704 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.attention.projection.bias
+        , %para705 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.attention.dense1.bias
+        , %para706 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.attention.dense2.bias
+        , %para707 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.attention.dense3.bias
+        , %para708 : Ref[Tensor(F32)][4096]    # adam_m.blocks.16.output.mapping.bias
+        , %para709 : Ref[Tensor(F32)][1024]    # adam_m.blocks.16.output.projection.bias
+        , %para710 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.layernorm1.gamma
+        , %para711 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.layernorm1.beta
+        , %para712 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.layernorm2.gamma
+        , %para713 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.layernorm2.beta
+        , %para714 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.attention.projection.bias
+        , %para715 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.attention.dense1.bias
+        , %para716 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.attention.dense2.bias
+        , %para717 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.attention.dense3.bias
+        , %para718 : Ref[Tensor(F32)][4096]    # adam_m.blocks.17.output.mapping.bias
+        , %para719 : Ref[Tensor(F32)][1024]    # adam_m.blocks.17.output.projection.bias
+        , %para720 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.layernorm1.gamma
+        , %para721 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.layernorm1.beta
+        , %para722 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.layernorm2.gamma
+        , %para723 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.layernorm2.beta
+        , %para724 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.attention.projection.bias
+        , %para725 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.attention.dense1.bias
+        , %para726 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.attention.dense2.bias
+        , %para727 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.attention.dense3.bias
+        , %para728 : Ref[Tensor(F32)][4096]    # adam_m.blocks.18.output.mapping.bias
+        , %para729 : Ref[Tensor(F32)][1024]    # adam_m.blocks.18.output.projection.bias
+        , %para730 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.layernorm1.gamma
+        , %para731 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.layernorm1.beta
+        , %para732 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.layernorm2.gamma
+        , %para733 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.layernorm2.beta
+        , %para734 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.attention.projection.bias
+        , %para735 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.attention.dense1.bias
+        , %para736 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.attention.dense2.bias
+        , %para737 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.attention.dense3.bias
+        , %para738 : Ref[Tensor(F32)][4096]    # adam_m.blocks.19.output.mapping.bias
+        , %para739 : Ref[Tensor(F32)][1024]    # adam_m.blocks.19.output.projection.bias
+        , %para740 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.layernorm1.gamma
+        , %para741 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.layernorm1.beta
+        , %para742 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.layernorm2.gamma
+        , %para743 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.layernorm2.beta
+        , %para744 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.attention.projection.bias
+        , %para745 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.attention.dense1.bias
+        , %para746 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.attention.dense2.bias
+        , %para747 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.attention.dense3.bias
+        , %para748 : Ref[Tensor(F32)][4096]    # adam_m.blocks.20.output.mapping.bias
+        , %para749 : Ref[Tensor(F32)][1024]    # adam_m.blocks.20.output.projection.bias
+        , %para750 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.layernorm1.gamma
+        , %para751 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.layernorm1.beta
+        , %para752 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.layernorm2.gamma
+        , %para753 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.layernorm2.beta
+        , %para754 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.attention.projection.bias
+        , %para755 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.attention.dense1.bias
+        , %para756 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.attention.dense2.bias
+        , %para757 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.attention.dense3.bias
+        , %para758 : Ref[Tensor(F32)][4096]    # adam_m.blocks.21.output.mapping.bias
+        , %para759 : Ref[Tensor(F32)][1024]    # adam_m.blocks.21.output.projection.bias
+        , %para760 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.layernorm1.gamma
+        , %para761 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.layernorm1.beta
+        , %para762 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.layernorm2.gamma
+        , %para763 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.layernorm2.beta
+        , %para764 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.attention.projection.bias
+        , %para765 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.attention.dense1.bias
+        , %para766 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.attention.dense2.bias
+        , %para767 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.attention.dense3.bias
+        , %para768 : Ref[Tensor(F32)][4096]    # adam_m.blocks.22.output.mapping.bias
+        , %para769 : Ref[Tensor(F32)][1024]    # adam_m.blocks.22.output.projection.bias
+        , %para770 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.layernorm1.gamma
+        , %para771 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.layernorm1.beta
+        , %para772 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.layernorm2.gamma
+        , %para773 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.layernorm2.beta
+        , %para774 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.attention.projection.bias
+        , %para775 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.attention.dense1.bias
+        , %para776 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.attention.dense2.bias
+        , %para777 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.attention.dense3.bias
+        , %para778 : Ref[Tensor(F32)][4096]    # adam_m.blocks.23.output.mapping.bias
+        , %para779 : Ref[Tensor(F32)][1024]    # adam_m.blocks.23.output.projection.bias
+        , %para780 : Ref[Tensor(F32)][50257, 1024]    # adam_v.embedding.word_embedding.embedding_table
+        , %para781 : Ref[Tensor(F32)][2048, 1024]    # adam_v.embedding.position_embedding.embedding_table
+        , %para782 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.0.attention.projection.weight
+        , %para783 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.0.attention.dense1.weight
+        , %para784 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.0.attention.dense2.weight
+        , %para785 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.0.attention.dense3.weight
+        , %para786 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.0.output.mapping.weight
+        , %para787 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.0.output.projection.weight
+        , %para788 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.1.attention.projection.weight
+        , %para789 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.1.attention.dense1.weight
+        , %para790 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.1.attention.dense2.weight
+        , %para791 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.1.attention.dense3.weight
+        , %para792 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.1.output.mapping.weight
+        , %para793 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.1.output.projection.weight
+        , %para794 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.2.attention.projection.weight
+        , %para795 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.2.attention.dense1.weight
+        , %para796 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.2.attention.dense2.weight
+        , %para797 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.2.attention.dense3.weight
+        , %para798 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.2.output.mapping.weight
+        , %para799 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.2.output.projection.weight
+        , %para800 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.3.attention.projection.weight
+        , %para801 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.3.attention.dense1.weight
+        , %para802 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.3.attention.dense2.weight
+        , %para803 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.3.attention.dense3.weight
+        , %para804 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.3.output.mapping.weight
+        , %para805 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.3.output.projection.weight
+        , %para806 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.4.attention.projection.weight
+        , %para807 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.4.attention.dense1.weight
+        , %para808 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.4.attention.dense2.weight
+        , %para809 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.4.attention.dense3.weight
+        , %para810 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.4.output.mapping.weight
+        , %para811 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.4.output.projection.weight
+        , %para812 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.5.attention.projection.weight
+        , %para813 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.5.attention.dense1.weight
+        , %para814 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.5.attention.dense2.weight
+        , %para815 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.5.attention.dense3.weight
+        , %para816 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.5.output.mapping.weight
+        , %para817 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.5.output.projection.weight
+        , %para818 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.6.attention.projection.weight
+        , %para819 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.6.attention.dense1.weight
+        , %para820 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.6.attention.dense2.weight
+        , %para821 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.6.attention.dense3.weight
+        , %para822 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.6.output.mapping.weight
+        , %para823 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.6.output.projection.weight
+        , %para824 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.7.attention.projection.weight
+        , %para825 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.7.attention.dense1.weight
+        , %para826 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.7.attention.dense2.weight
+        , %para827 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.7.attention.dense3.weight
+        , %para828 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.7.output.mapping.weight
+        , %para829 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.7.output.projection.weight
+        , %para830 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.8.attention.projection.weight
+        , %para831 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.8.attention.dense1.weight
+        , %para832 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.8.attention.dense2.weight
+        , %para833 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.8.attention.dense3.weight
+        , %para834 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.8.output.mapping.weight
+        , %para835 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.8.output.projection.weight
+        , %para836 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.9.attention.projection.weight
+        , %para837 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.9.attention.dense1.weight
+        , %para838 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.9.attention.dense2.weight
+        , %para839 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.9.attention.dense3.weight
+        , %para840 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.9.output.mapping.weight
+        , %para841 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.9.output.projection.weight
+        , %para842 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.10.attention.projection.weight
+        , %para843 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.10.attention.dense1.weight
+        , %para844 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.10.attention.dense2.weight
+        , %para845 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.10.attention.dense3.weight
+        , %para846 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.10.output.mapping.weight
+        , %para847 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.10.output.projection.weight
+        , %para848 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.11.attention.projection.weight
+        , %para849 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.11.attention.dense1.weight
+        , %para850 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.11.attention.dense2.weight
+        , %para851 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.11.attention.dense3.weight
+        , %para852 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.11.output.mapping.weight
+        , %para853 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.11.output.projection.weight
+        , %para854 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.12.attention.projection.weight
+        , %para855 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.12.attention.dense1.weight
+        , %para856 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.12.attention.dense2.weight
+        , %para857 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.12.attention.dense3.weight
+        , %para858 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.12.output.mapping.weight
+        , %para859 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.12.output.projection.weight
+        , %para860 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.13.attention.projection.weight
+        , %para861 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.13.attention.dense1.weight
+        , %para862 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.13.attention.dense2.weight
+        , %para863 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.13.attention.dense3.weight
+        , %para864 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.13.output.mapping.weight
+        , %para865 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.13.output.projection.weight
+        , %para866 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.14.attention.projection.weight
+        , %para867 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.14.attention.dense1.weight
+        , %para868 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.14.attention.dense2.weight
+        , %para869 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.14.attention.dense3.weight
+        , %para870 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.14.output.mapping.weight
+        , %para871 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.14.output.projection.weight
+        , %para872 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.15.attention.projection.weight
+        , %para873 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.15.attention.dense1.weight
+        , %para874 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.15.attention.dense2.weight
+        , %para875 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.15.attention.dense3.weight
+        , %para876 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.15.output.mapping.weight
+        , %para877 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.15.output.projection.weight
+        , %para878 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.16.attention.projection.weight
+        , %para879 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.16.attention.dense1.weight
+        , %para880 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.16.attention.dense2.weight
+        , %para881 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.16.attention.dense3.weight
+        , %para882 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.16.output.mapping.weight
+        , %para883 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.16.output.projection.weight
+        , %para884 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.17.attention.projection.weight
+        , %para885 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.17.attention.dense1.weight
+        , %para886 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.17.attention.dense2.weight
+        , %para887 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.17.attention.dense3.weight
+        , %para888 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.17.output.mapping.weight
+        , %para889 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.17.output.projection.weight
+        , %para890 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.18.attention.projection.weight
+        , %para891 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.18.attention.dense1.weight
+        , %para892 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.18.attention.dense2.weight
+        , %para893 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.18.attention.dense3.weight
+        , %para894 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.18.output.mapping.weight
+        , %para895 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.18.output.projection.weight
+        , %para896 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.19.attention.projection.weight
+        , %para897 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.19.attention.dense1.weight
+        , %para898 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.19.attention.dense2.weight
+        , %para899 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.19.attention.dense3.weight
+        , %para900 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.19.output.mapping.weight
+        , %para901 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.19.output.projection.weight
+        , %para902 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.20.attention.projection.weight
+        , %para903 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.20.attention.dense1.weight
+        , %para904 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.20.attention.dense2.weight
+        , %para905 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.20.attention.dense3.weight
+        , %para906 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.20.output.mapping.weight
+        , %para907 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.20.output.projection.weight
+        , %para908 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.21.attention.projection.weight
+        , %para909 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.21.attention.dense1.weight
+        , %para910 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.21.attention.dense2.weight
+        , %para911 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.21.attention.dense3.weight
+        , %para912 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.21.output.mapping.weight
+        , %para913 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.21.output.projection.weight
+        , %para914 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.22.attention.projection.weight
+        , %para915 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.22.attention.dense1.weight
+        , %para916 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.22.attention.dense2.weight
+        , %para917 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.22.attention.dense3.weight
+        , %para918 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.22.output.mapping.weight
+        , %para919 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.22.output.projection.weight
+        , %para920 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.23.attention.projection.weight
+        , %para921 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.23.attention.dense1.weight
+        , %para922 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.23.attention.dense2.weight
+        , %para923 : Ref[Tensor(F32)][1024, 1024]    # adam_v.blocks.23.attention.dense3.weight
+        , %para924 : Ref[Tensor(F32)][1024, 4096]    # adam_v.blocks.23.output.mapping.weight
+        , %para925 : Ref[Tensor(F32)][4096, 1024]    # adam_v.blocks.23.output.projection.weight
+        , %para926 : Ref[Tensor(F32)][1024]    # adam_v.layernorm.gamma
+        , %para927 : Ref[Tensor(F32)][1024]    # adam_v.layernorm.beta
+        , %para928 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.layernorm1.gamma
+        , %para929 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.layernorm1.beta
+        , %para930 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.layernorm2.gamma
+        , %para931 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.layernorm2.beta
+        , %para932 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.attention.projection.bias
+        , %para933 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.attention.dense1.bias
+        , %para934 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.attention.dense2.bias
+        , %para935 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.attention.dense3.bias
+        , %para936 : Ref[Tensor(F32)][4096]    # adam_v.blocks.0.output.mapping.bias
+        , %para937 : Ref[Tensor(F32)][1024]    # adam_v.blocks.0.output.projection.bias
+        , %para938 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.layernorm1.gamma
+        , %para939 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.layernorm1.beta
+        , %para940 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.layernorm2.gamma
+        , %para941 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.layernorm2.beta
+        , %para942 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.attention.projection.bias
+        , %para943 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.attention.dense1.bias
+        , %para944 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.attention.dense2.bias
+        , %para945 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.attention.dense3.bias
+        , %para946 : Ref[Tensor(F32)][4096]    # adam_v.blocks.1.output.mapping.bias
+        , %para947 : Ref[Tensor(F32)][1024]    # adam_v.blocks.1.output.projection.bias
+        , %para948 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.layernorm1.gamma
+        , %para949 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.layernorm1.beta
+        , %para950 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.layernorm2.gamma
+        , %para951 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.layernorm2.beta
+        , %para952 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.attention.projection.bias
+        , %para953 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.attention.dense1.bias
+        , %para954 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.attention.dense2.bias
+        , %para955 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.attention.dense3.bias
+        , %para956 : Ref[Tensor(F32)][4096]    # adam_v.blocks.2.output.mapping.bias
+        , %para957 : Ref[Tensor(F32)][1024]    # adam_v.blocks.2.output.projection.bias
+        , %para958 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.layernorm1.gamma
+        , %para959 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.layernorm1.beta
+        , %para960 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.layernorm2.gamma
+        , %para961 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.layernorm2.beta
+        , %para962 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.attention.projection.bias
+        , %para963 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.attention.dense1.bias
+        , %para964 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.attention.dense2.bias
+        , %para965 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.attention.dense3.bias
+        , %para966 : Ref[Tensor(F32)][4096]    # adam_v.blocks.3.output.mapping.bias
+        , %para967 : Ref[Tensor(F32)][1024]    # adam_v.blocks.3.output.projection.bias
+        , %para968 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.layernorm1.gamma
+        , %para969 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.layernorm1.beta
+        , %para970 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.layernorm2.gamma
+        , %para971 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.layernorm2.beta
+        , %para972 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.attention.projection.bias
+        , %para973 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.attention.dense1.bias
+        , %para974 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.attention.dense2.bias
+        , %para975 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.attention.dense3.bias
+        , %para976 : Ref[Tensor(F32)][4096]    # adam_v.blocks.4.output.mapping.bias
+        , %para977 : Ref[Tensor(F32)][1024]    # adam_v.blocks.4.output.projection.bias
+        , %para978 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.layernorm1.gamma
+        , %para979 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.layernorm1.beta
+        , %para980 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.layernorm2.gamma
+        , %para981 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.layernorm2.beta
+        , %para982 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.attention.projection.bias
+        , %para983 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.attention.dense1.bias
+        , %para984 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.attention.dense2.bias
+        , %para985 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.attention.dense3.bias
+        , %para986 : Ref[Tensor(F32)][4096]    # adam_v.blocks.5.output.mapping.bias
+        , %para987 : Ref[Tensor(F32)][1024]    # adam_v.blocks.5.output.projection.bias
+        , %para988 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.layernorm1.gamma
+        , %para989 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.layernorm1.beta
+        , %para990 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.layernorm2.gamma
+        , %para991 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.layernorm2.beta
+        , %para992 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.attention.projection.bias
+        , %para993 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.attention.dense1.bias
+        , %para994 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.attention.dense2.bias
+        , %para995 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.attention.dense3.bias
+        , %para996 : Ref[Tensor(F32)][4096]    # adam_v.blocks.6.output.mapping.bias
+        , %para997 : Ref[Tensor(F32)][1024]    # adam_v.blocks.6.output.projection.bias
+        , %para998 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.layernorm1.gamma
+        , %para999 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.layernorm1.beta
+        , %para1000 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.layernorm2.gamma
+        , %para1001 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.layernorm2.beta
+        , %para1002 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.attention.projection.bias
+        , %para1003 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.attention.dense1.bias
+        , %para1004 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.attention.dense2.bias
+        , %para1005 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.attention.dense3.bias
+        , %para1006 : Ref[Tensor(F32)][4096]    # adam_v.blocks.7.output.mapping.bias
+        , %para1007 : Ref[Tensor(F32)][1024]    # adam_v.blocks.7.output.projection.bias
+        , %para1008 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.layernorm1.gamma
+        , %para1009 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.layernorm1.beta
+        , %para1010 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.layernorm2.gamma
+        , %para1011 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.layernorm2.beta
+        , %para1012 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.attention.projection.bias
+        , %para1013 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.attention.dense1.bias
+        , %para1014 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.attention.dense2.bias
+        , %para1015 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.attention.dense3.bias
+        , %para1016 : Ref[Tensor(F32)][4096]    # adam_v.blocks.8.output.mapping.bias
+        , %para1017 : Ref[Tensor(F32)][1024]    # adam_v.blocks.8.output.projection.bias
+        , %para1018 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.layernorm1.gamma
+        , %para1019 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.layernorm1.beta
+        , %para1020 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.layernorm2.gamma
+        , %para1021 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.layernorm2.beta
+        , %para1022 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.attention.projection.bias
+        , %para1023 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.attention.dense1.bias
+        , %para1024 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.attention.dense2.bias
+        , %para1025 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.attention.dense3.bias
+        , %para1026 : Ref[Tensor(F32)][4096]    # adam_v.blocks.9.output.mapping.bias
+        , %para1027 : Ref[Tensor(F32)][1024]    # adam_v.blocks.9.output.projection.bias
+        , %para1028 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.layernorm1.gamma
+        , %para1029 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.layernorm1.beta
+        , %para1030 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.layernorm2.gamma
+        , %para1031 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.layernorm2.beta
+        , %para1032 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.attention.projection.bias
+        , %para1033 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.attention.dense1.bias
+        , %para1034 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.attention.dense2.bias
+        , %para1035 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.attention.dense3.bias
+        , %para1036 : Ref[Tensor(F32)][4096]    # adam_v.blocks.10.output.mapping.bias
+        , %para1037 : Ref[Tensor(F32)][1024]    # adam_v.blocks.10.output.projection.bias
+        , %para1038 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.layernorm1.gamma
+        , %para1039 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.layernorm1.beta
+        , %para1040 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.layernorm2.gamma
+        , %para1041 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.layernorm2.beta
+        , %para1042 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.attention.projection.bias
+        , %para1043 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.attention.dense1.bias
+        , %para1044 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.attention.dense2.bias
+        , %para1045 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.attention.dense3.bias
+        , %para1046 : Ref[Tensor(F32)][4096]    # adam_v.blocks.11.output.mapping.bias
+        , %para1047 : Ref[Tensor(F32)][1024]    # adam_v.blocks.11.output.projection.bias
+        , %para1048 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.layernorm1.gamma
+        , %para1049 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.layernorm1.beta
+        , %para1050 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.layernorm2.gamma
+        , %para1051 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.layernorm2.beta
+        , %para1052 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.attention.projection.bias
+        , %para1053 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.attention.dense1.bias
+        , %para1054 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.attention.dense2.bias
+        , %para1055 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.attention.dense3.bias
+        , %para1056 : Ref[Tensor(F32)][4096]    # adam_v.blocks.12.output.mapping.bias
+        , %para1057 : Ref[Tensor(F32)][1024]    # adam_v.blocks.12.output.projection.bias
+        , %para1058 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.layernorm1.gamma
+        , %para1059 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.layernorm1.beta
+        , %para1060 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.layernorm2.gamma
+        , %para1061 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.layernorm2.beta
+        , %para1062 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.attention.projection.bias
+        , %para1063 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.attention.dense1.bias
+        , %para1064 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.attention.dense2.bias
+        , %para1065 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.attention.dense3.bias
+        , %para1066 : Ref[Tensor(F32)][4096]    # adam_v.blocks.13.output.mapping.bias
+        , %para1067 : Ref[Tensor(F32)][1024]    # adam_v.blocks.13.output.projection.bias
+        , %para1068 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.layernorm1.gamma
+        , %para1069 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.layernorm1.beta
+        , %para1070 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.layernorm2.gamma
+        , %para1071 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.layernorm2.beta
+        , %para1072 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.attention.projection.bias
+        , %para1073 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.attention.dense1.bias
+        , %para1074 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.attention.dense2.bias
+        , %para1075 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.attention.dense3.bias
+        , %para1076 : Ref[Tensor(F32)][4096]    # adam_v.blocks.14.output.mapping.bias
+        , %para1077 : Ref[Tensor(F32)][1024]    # adam_v.blocks.14.output.projection.bias
+        , %para1078 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.layernorm1.gamma
+        , %para1079 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.layernorm1.beta
+        , %para1080 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.layernorm2.gamma
+        , %para1081 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.layernorm2.beta
+        , %para1082 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.attention.projection.bias
+        , %para1083 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.attention.dense1.bias
+        , %para1084 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.attention.dense2.bias
+        , %para1085 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.attention.dense3.bias
+        , %para1086 : Ref[Tensor(F32)][4096]    # adam_v.blocks.15.output.mapping.bias
+        , %para1087 : Ref[Tensor(F32)][1024]    # adam_v.blocks.15.output.projection.bias
+        , %para1088 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.layernorm1.gamma
+        , %para1089 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.layernorm1.beta
+        , %para1090 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.layernorm2.gamma
+        , %para1091 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.layernorm2.beta
+        , %para1092 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.attention.projection.bias
+        , %para1093 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.attention.dense1.bias
+        , %para1094 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.attention.dense2.bias
+        , %para1095 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.attention.dense3.bias
+        , %para1096 : Ref[Tensor(F32)][4096]    # adam_v.blocks.16.output.mapping.bias
+        , %para1097 : Ref[Tensor(F32)][1024]    # adam_v.blocks.16.output.projection.bias
+        , %para1098 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.layernorm1.gamma
+        , %para1099 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.layernorm1.beta
+        , %para1100 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.layernorm2.gamma
+        , %para1101 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.layernorm2.beta
+        , %para1102 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.attention.projection.bias
+        , %para1103 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.attention.dense1.bias
+        , %para1104 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.attention.dense2.bias
+        , %para1105 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.attention.dense3.bias
+        , %para1106 : Ref[Tensor(F32)][4096]    # adam_v.blocks.17.output.mapping.bias
+        , %para1107 : Ref[Tensor(F32)][1024]    # adam_v.blocks.17.output.projection.bias
+        , %para1108 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.layernorm1.gamma
+        , %para1109 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.layernorm1.beta
+        , %para1110 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.layernorm2.gamma
+        , %para1111 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.layernorm2.beta
+        , %para1112 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.attention.projection.bias
+        , %para1113 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.attention.dense1.bias
+        , %para1114 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.attention.dense2.bias
+        , %para1115 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.attention.dense3.bias
+        , %para1116 : Ref[Tensor(F32)][4096]    # adam_v.blocks.18.output.mapping.bias
+        , %para1117 : Ref[Tensor(F32)][1024]    # adam_v.blocks.18.output.projection.bias
+        , %para1118 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.layernorm1.gamma
+        , %para1119 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.layernorm1.beta
+        , %para1120 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.layernorm2.gamma
+        , %para1121 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.layernorm2.beta
+        , %para1122 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.attention.projection.bias
+        , %para1123 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.attention.dense1.bias
+        , %para1124 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.attention.dense2.bias
+        , %para1125 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.attention.dense3.bias
+        , %para1126 : Ref[Tensor(F32)][4096]    # adam_v.blocks.19.output.mapping.bias
+        , %para1127 : Ref[Tensor(F32)][1024]    # adam_v.blocks.19.output.projection.bias
+        , %para1128 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.layernorm1.gamma
+        , %para1129 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.layernorm1.beta
+        , %para1130 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.layernorm2.gamma
+        , %para1131 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.layernorm2.beta
+        , %para1132 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.attention.projection.bias
+        , %para1133 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.attention.dense1.bias
+        , %para1134 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.attention.dense2.bias
+        , %para1135 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.attention.dense3.bias
+        , %para1136 : Ref[Tensor(F32)][4096]    # adam_v.blocks.20.output.mapping.bias
+        , %para1137 : Ref[Tensor(F32)][1024]    # adam_v.blocks.20.output.projection.bias
+        , %para1138 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.layernorm1.gamma
+        , %para1139 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.layernorm1.beta
+        , %para1140 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.layernorm2.gamma
+        , %para1141 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.layernorm2.beta
+        , %para1142 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.attention.projection.bias
+        , %para1143 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.attention.dense1.bias
+        , %para1144 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.attention.dense2.bias
+        , %para1145 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.attention.dense3.bias
+        , %para1146 : Ref[Tensor(F32)][4096]    # adam_v.blocks.21.output.mapping.bias
+        , %para1147 : Ref[Tensor(F32)][1024]    # adam_v.blocks.21.output.projection.bias
+        , %para1148 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.layernorm1.gamma
+        , %para1149 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.layernorm1.beta
+        , %para1150 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.layernorm2.gamma
+        , %para1151 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.layernorm2.beta
+        , %para1152 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.attention.projection.bias
+        , %para1153 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.attention.dense1.bias
+        , %para1154 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.attention.dense2.bias
+        , %para1155 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.attention.dense3.bias
+        , %para1156 : Ref[Tensor(F32)][4096]    # adam_v.blocks.22.output.mapping.bias
+        , %para1157 : Ref[Tensor(F32)][1024]    # adam_v.blocks.22.output.projection.bias
+        , %para1158 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.layernorm1.gamma
+        , %para1159 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.layernorm1.beta
+        , %para1160 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.layernorm2.gamma
+        , %para1161 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.layernorm2.beta
+        , %para1162 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.attention.projection.bias
+        , %para1163 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.attention.dense1.bias
+        , %para1164 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.attention.dense2.bias
+        , %para1165 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.attention.dense3.bias
+        , %para1166 : Ref[Tensor(F32)][4096]    # adam_v.blocks.23.output.mapping.bias
+        , %para1167 : Ref[Tensor(F32)][1024]    # adam_v.blocks.23.output.projection.bias
+        , %para1168 : Ref[Tensor(I32)][]    # last_overflow_iterator_step
+        , %para1169 : Ref[Tensor(I32)][1]    # global_step
+    ) {
+    %1 : Tuple[Tensor(I32)]TupleShape((4, 2048)) = Primitive::MakeTuple{prim_type=1}(%para1)    #(Tensor(I32)[4, 2048]) #scope: Default
+#[CNode]22
+
+#------------------------> 0
+    %2 = UnpackCall::unpack_call(FuncGraph::fg_23, %1)    #(FuncNoShape, Tuple[Tensor(I32)]TupleShape((4, 2048)))    # fg_23=Default.23 #scope: Default
+#[CNode]24
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]25
+}
+# order:
+#   1: @Default_wrapper.8:[CNode]24{[0]: ValueNode<UnpackCall> unpack_call.26, [1]: ValueNode<FuncGraph> Default.23, [2]: [CNode]22}
+#   2: @Default_wrapper.8:[CNode]25{[0]: ValueNode<Primitive> Return, [1]: [CNode]24}
+
+
+# [No.2] UnpackCall.9
+
+funcgraph fg_9(
+        %para1170 : FuncNoShape    # 10
+        , %para1171 : Tuple[Tensor(I32)]TupleShape((4, 2048))    # 11
+    ) {
+    %1 : Tensor(I32)[4, 2048] = Primitive::TupleGetItem{prim_type=1}(%para1171, I64(0))    #(Tuple[Tensor(I32)]TupleShape((4, 2048)), I64NoShape) #scope: Default
+#27
+
+#------------------------> 1
+    %2 = %para1170(%1)    #(Tensor(I32)[4, 2048]) #scope: Default
+#28
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default
+#29
+}
+# order:
+#   1: @UnpackCall.9:28{[0]: 10, [1]: 27}
+#   2: @UnpackCall.9:29{[0]: ValueNode<Primitive> Return, [1]: 28}
+
+
+# [No.3] Default.12
+# In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:127/    def construct(self, *inputs):/
+funcgraph fg_12[fg_8](
+        %para1172 : Tensor(I32)[4, 2048]    # inputs0
+    ) {
+    %1 : Tuple[Tensor(I32)]TupleShape((4, 2048)) = Primitive::MakeTuple{prim_type=1}(%para1172)    #(Tensor(I32)[4, 2048]) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:127/    def construct(self, *inputs):/#[CNode]30
+
+#------------------------> 2
+    %2 = UnpackCall::unpack_call(FuncGraph::fg_16, %1)    #(FuncNoShape, Tuple[Tensor(I32)]TupleShape((4, 2048)))    # fg_16=GPT2LMHeadModel.16 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:148/            loss = F.depend(loss, self.optimizer(grads))/#фloss
+    %3 = FuncGraph::fg_31(%2, %para2)    #(Undefined, Ref[Tensor(F32)][])    # fg_31=start_overflow_check.31 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:133/        status, scaling_sens = self.start_overflow_check(loss, scaling_sens)/#[CNode]32
+    %4 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:133/        status, scaling_sens = self.start_overflow_check(loss, scaling_sens)/#status
+    %5 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:149/        return loss, overflow, scaling_sens/#фscaling_sens
+    %6 = DoSignaturePrimitive::S-Prim-Partial{prim_type=1}[side_effect_propagate=I64(1)](DoSignaturePrimitive::S-Prim-grad_scale{prim_type=1}, %5)    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:137/        grads = self.hyper_map(F.partial(_grad_scale, scaling_sens), grads)/#[CNode]33
+    %7 = DoSignaturePrimitive::S-Prim-hyper_map[ones_like_leaf]{prim_type=1}(%2)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:135/        scaling_sens_filled = C.ones_like(loss) * F.cast(scaling_sens, F.dtype(loss))/#[CNode]34
+    %8 = DoSignaturePrimitive::S-Prim-DType{prim_type=1}(%2)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:135/        scaling_sens_filled = C.ones_like(loss) * F.cast(scaling_sens, F.dtype(loss))/#[CNode]35
+    %9 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"]](%5, %8)    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:135/        scaling_sens_filled = C.ones_like(loss) * F.cast(scaling_sens, F.dtype(loss))/#[CNode]36
+    %10 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%7, %9)    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:135/        scaling_sens_filled = C.ones_like(loss) * F.cast(scaling_sens, F.dtype(loss))/#scaling_sens_filled
+    %11 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%10)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:136/        grads = self.grad(self.network, weights)(*inputs, scaling_sens_filled)/#[CNode]37
+    %12 = UnpackGraphPrimitive::UnpackGraph{prim_type=1}(FuncGraph::fg_16, %1, %11)    #(Undefined, Tuple[Tensor(I32)]TupleShape((4, 2048)), Undefined)    # fg_16=GPT2LMHeadModel.16 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:136/        grads = self.grad(self.network, weights)(*inputs, scaling_sens_filled)/#grads
+    %13 = Primitive::MakeTuple{prim_type=1}(%para3, %para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18, %para19, %para20, %para21, %para22, %para23, %para24, %para25, %para26, %para27, %para28, %para29, %para30, %para31, %para32, %para33, %para34, %para35, %para36, %para37, %para38, %para39, %para40, %para41, %para42, %para43, %para44, %para45, %para46, %para47, %para48, %para49, %para50, %para51, %para52, %para53, %para54, %para55, %para56, %para57, %para58, %para59, %para60, %para61, %para62, %para63, %para64, %para65, %para66, %para67, %para68, %para69, %para70, %para71, %para72, %para73, %para74, %para75, %para76, %para77, %para78, %para79, %para80, %para81, %para82, %para83, %para84, %para85, %para86, %para87, %para88, %para89, %para90, %para91, %para92, %para93, %para94, %para95, %para96, %para97, %para98, %para99, %para100, %para101, %para102, %para103, %para104, %para105, %para106, %para107, %para108, %para109, %para110, %para111, %para112, %para113, %para114, %para115, %para116, %para117, %para118, %para119, %para120, %para121, %para122, %para123, %para124, %para125, %para126, %para127, %para128, %para129, %para130, %para131, %para132, %para133, %para134, %para135, %para136, %para137, %para138, %para139, %para140, %para141, %para142, %para143, %para144, %para145, %para146, %para147, %para148, %para149, %para150, %para151, %para152, %para153, %para154, %para155, %para156, %para157, %para158, %para159, %para160, %para161, %para162, %para163, %para164, %para165, %para166, %para167, %para168, %para169, %para170, %para171, %para172, %para173, %para174, %para175, %para176, %para177, %para178, %para179, %para180, %para181, %para182, %para183, %para184, %para185, %para186, %para187, %para188, %para189, %para190, %para191, %para192, %para193, %para194, %para195, %para196, %para197, %para198, %para199, %para200, %para201, %para202, %para203, %para204, %para205, %para206, %para207, %para208, %para209, %para210, %para211, %para212, %para213, %para214, %para215, %para216, %para217, %para218, %para219, %para220, %para221, %para222, %para223, %para224, %para225, %para226, %para227, %para228, %para229, %para230, %para231, %para232, %para233, %para234, %para235, %para236, %para237, %para238, %para239, %para240, %para241, %para242, %para243, %para244, %para245, %para246, %para247, %para248, %para249, %para250, %para251, %para252, %para253, %para254, %para255, %para256, %para257, %para258, %para259, %para260, %para261, %para262, %para263, %para264, %para265, %para266, %para267, %para268, %para269, %para270, %para271, %para272, %para273, %para274, %para275, %para276, %para277, %para278, %para279, %para280, %para281, %para282, %para283, %para284, %para285, %para286, %para287, %para288, %para289, %para290, %para291, %para292, %para293, %para294, %para295, %para296, %para297, %para298, %para299, %para300, %para301, %para302, %para303, %para304, %para305, %para306, %para307, %para308, %para309, %para310, %para311, %para312, %para313, %para314, %para315, %para316, %para317, %para318, %para319, %para320, %para321, %para322, %para323, %para324, %para325, %para326, %para327, %para328, %para329, %para330, %para331, %para332, %para333, %para334, %para335, %para336, %para337, %para338, %para339, %para340, %para341, %para342, %para343, %para344, %para345, %para346, %para347, %para348, %para349, %para350, %para351, %para352, %para353, %para354, %para355, %para356, %para357, %para358, %para359, %para360, %para361, %para362, %para363, %para364, %para365, %para366, %para367, %para368, %para369, %para370, %para371, %para372, %para373, %para374, %para375, %para376, %para377, %para378, %para379, %para380, %para381, %para382, %para383, %para384, %para385, %para386, %para387, %para388, %para389, %para390)    #(Ref[Tensor(F32)][50257, 1024], Ref[Tensor(F32)][2048, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 1024], Ref[Tensor(F16)][1024, 4096], Ref[Tensor(F16)][4096, 1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F32)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][1024], Ref[Tensor(F16)][4096], Ref[Tensor(F16)][1024]) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:129/        weights = self.weights/#[CNode]38
+    %14 = DoSignaturePrimitive::S-Prim-grad{prim_type=1}(%12, %13)    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:136/        grads = self.grad(self.network, weights)(*inputs, scaling_sens_filled)/#grads
+    %15 = UnpackCall::unpack_call(%14, %1, %11)    #(Undefined, Tuple[Tensor(I32)]TupleShape((4, 2048)), Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:136/        grads = self.grad(self.network, weights)(*inputs, scaling_sens_filled)/#grads
+    %16 = DoSignaturePrimitive::S-Prim-hyper_map{prim_type=1}(%6, %15)    #(Undefined, Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:137/        grads = self.hyper_map(F.partial(_grad_scale, scaling_sens), grads)/#grads
+    %17 = DoSignaturePrimitive::S-Prim-identity{prim_type=1}[side_effect_propagate=I64(1)](%16)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:139/        grads = self.grad_reducer(grads)/#grads
+    %18 = FuncGraph::fg_39(%4, %17)    #(Undefined, Undefined)    # fg_39=get_overflow_status.39 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:142/        cond = self.get_overflow_status(status, grads)/#cond
+    %19 = FuncGraph::fg_40(%18)    #(Undefined)    # fg_40=process_loss_scale.40 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:149/        return loss, overflow, scaling_sens/#фoverflow
+    %20 = DoSignaturePrimitive::S-Prim-logical_not{prim_type=1}(%19)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]41
+    %21 = FuncGraph::fg_42(%20)    #(Undefined)    # fg_42=bool_.42 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]43
+    %22 = Primitive::Switch{prim_type=1}(%21, FuncGraph::fg_44, FuncGraph::fg_45)    #(Undefined, Undefined, Undefined)    # fg_44=✓Default.44, fg_45=✗Default.45 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]46
+    %23 = %22() #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]47
+    %24 = FuncGraph::fg_48(%23)    #(Undefined)    # fg_48=↓Default.48 #scope: Default
+#[CNode]49
+    Primitive::Return{prim_type=1}(%24)    #(Undefined) #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:145/        if not overflow:/#[CNode]50
+}
+# order:
+#   1: @Default.12:фloss{[0]: ValueNode<UnpackCall> unpack_call.51, [1]: ValueNode<FuncGraph> GPT2LMHeadModel.16, [2]: [CNode]30}
+#   2: @Default.12:[CNode]32{[0]: ValueNode<FuncGraph> start_overflow_check.31, [1]: фloss, [2]: scale_sense}
+#   3: @Default.12:status{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]32, [2]: ValueNode<Int64Imm> 0}
+#   4: @Default.12:фscaling_sens{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]32, [2]: ValueNode<Int64Imm> 1}
+#   5: @Default.12:[CNode]34{[0]: ValueNode<DoSignaturePrimitive> S-Prim-hyper_map[ones_like_leaf], [1]: фloss}
+#   6: @Default.12:[CNode]35{[0]: ValueNode<DoSignaturePrimitive> S-Prim-DType, [1]: фloss}
+#   7: @Default.12:[CNode]36{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: фscaling_sens, [2]: [CNode]35}
+#   8: @Default.12:scaling_sens_filled{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: [CNode]34, [2]: [CNode]36}
+#   9: @Default.12:[CNode]37{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: scaling_sens_filled}
+#  10: @Default.12:grads{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: ValueNode<FuncGraph> GPT2LMHeadModel.16, [2]: [CNode]30, [3]: [CNode]37}
+#  11: @Default.12:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-grad, [1]: grads, [2]: [CNode]38}
+#  12: @Default.12:grads{[0]: ValueNode<UnpackCall> unpack_call.52, [1]: grads, [2]: [CNode]30, [3]: [CNode]37}
+#  13: @Default.12:[CNode]33{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Partial, [1]: ValueNode<DoSignaturePrimitive> S-Prim-grad_scale, [2]: фscaling_sens}
+#  14: @Default.12:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-hyper_map, [1]: [CNode]33, [2]: grads}
+#  15: @Default.12:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-identity, [1]: grads}
+#  16: @Default.12:cond{[0]: ValueNode<FuncGraph> get_overflow_status.39, [1]: status, [2]: grads}
+#  17: @Default.12:фoverflow{[0]: ValueNode<FuncGraph> process_loss_scale.40, [1]: cond}
+#  18: @Default.12:[CNode]41{[0]: ValueNode<DoSignaturePrimitive> S-Prim-logical_not, [1]: фoverflow}
+#  19: @Default.12:[CNode]43{[0]: ValueNode<FuncGraph> bool_.42, [1]: [CNode]41}
+#  20: @Default.12:[CNode]46{[0]: ValueNode<Primitive> Switch, [1]: [CNode]43, [2]: ValueNode<FuncGraph> ✓Default.44, [3]: ValueNode<FuncGraph> ✗Default.45}
+#  21: @Default.12:[CNode]47{[0]: [CNode]46}
+#  22: @Default.12:[CNode]49{[0]: ValueNode<FuncGraph> ↓Default.48, [1]: [CNode]47}
+#  23: @Default.12:[CNode]50{[0]: ValueNode<Primitive> Return, [1]: [CNode]49}
+
+
+# [No.4] UnpackCall.13
+
+funcgraph fg_13(
+        %para1173 : FuncNoShape    # 14
+        , %para1174 : Tuple[Tensor(I32)]TupleShape((4, 2048))    # 15
+    ) {
+    %1 : Tensor(I32)[4, 2048] = Primitive::TupleGetItem{prim_type=1}(%para1174, I64(0))    #(Tuple[Tensor(I32)]TupleShape((4, 2048)), I64NoShape) #scope: Default
+#53
+
+#------------------------> 3
+    %2 = %para1173(%1)    #(Tensor(I32)[4, 2048]) #scope: Default
+#54
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default
+#55
+}
+# order:
+#   1: @UnpackCall.13:54{[0]: 14, [1]: 53}
+#   2: @UnpackCall.13:55{[0]: ValueNode<Primitive> Return, [1]: 54}
+
+
+# [No.5] GPT2LMHeadModel.16
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:82/    def construct(self, input_ids):/
+funcgraph fg_16[fg_8](
+        %para1175 : Tensor(I32)[4, 2048]    # фinput_ids
+    ) {
+    %1 : BoolNoShape = DoSignaturePrimitive::S-Prim-equal{prim_type=1}("train", "train")    #(StringNoShape, StringNoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/#[CNode]56
+    %2 : BoolNoShape = FuncGraph::fg_42(%1)    #(BoolNoShape)    # fg_42=bool_.42 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/#[CNode]57
+    %3 : FuncNoShape = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_58, FuncGraph::fg_59)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_58=✓GPT2LMHeadModel.58, fg_59=✗GPT2LMHeadModel.59 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/#[CNode]60
+    %4 : Tensor(I32)[4, 2047] = %3() #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/#[CNode]61
+
+#------------------------> 4
+    %5 = FuncGraph::fg_17(%4)    #(Tensor(I32)[4, 2047])    # fg_17=↓GPT2LMHeadModel.17 #scope: Default
+      # In file /home/crackhopper/project/test_ascend/mindformers/wrapper/wrapper.py:130/        loss = self.network(*inputs)/#[CNode]62
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/#[CNode]63
+}
+# order:
+#   1: @GPT2LMHeadModel.16:[CNode]64{[0]: ValueNode<Primitive> getattr, [1]: фinput_ids, [2]: ValueNode<StringImm> shape}
+#   2: @GPT2LMHeadModel.16:фbatch_size{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]64, [2]: ValueNode<Int64Imm> 0}
+#   3: @GPT2LMHeadModel.16:фseq_length{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]64, [2]: ValueNode<Int64Imm> 1}
+#   4: @GPT2LMHeadModel.16:[CNode]56{[0]: ValueNode<DoSignaturePrimitive> S-Prim-equal, [1]: ValueNode<StringImm> train, [2]: ValueNode<StringImm> train}
+#   5: @GPT2LMHeadModel.16:[CNode]57{[0]: ValueNode<FuncGraph> bool_.42, [1]: [CNode]56}
+#   6: @GPT2LMHeadModel.16:[CNode]60{[0]: ValueNode<Primitive> Switch, [1]: [CNode]57, [2]: ValueNode<FuncGraph> ✓GPT2LMHeadModel.58, [3]: ValueNode<FuncGraph> ✗GPT2LMHeadModel.59}
+#   7: @GPT2LMHeadModel.16:[CNode]61{[0]: [CNode]60}
+#   8: @GPT2LMHeadModel.16:[CNode]62{[0]: ValueNode<FuncGraph> ↓GPT2LMHeadModel.17, [1]: [CNode]61}
+#   9: @GPT2LMHeadModel.16:[CNode]63{[0]: ValueNode<Primitive> Return, [1]: [CNode]62}
+
+
+# [No.6] ↓GPT2LMHeadModel.17
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:96/        if self.phase == "train":/
+funcgraph fg_17[fg_16](
+        %para1176 : Tensor(I32)[4, 2047]    # фtokens
+    ) {
+    %1 : BoolNoShape = DoSignaturePrimitive::S-Prim-not_equal{prim_type=1}("train", "train")    #(StringNoShape, StringNoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]65
+    %2 : BoolNoShape = FuncGraph::fg_42(%1)    #(BoolNoShape)    # fg_42=bool_.42 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]66
+    %3 : FuncNoShape = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_67, FuncGraph::fg_18)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_67=✓↓GPT2LMHeadModel.67, fg_18=✗↓GPT2LMHeadModel.18 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]68
+
+#------------------------> 5
+    %4 = %3() #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]69
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]70
+}
+# order:
+#   1: @↓GPT2LMHeadModel.17:[CNode]71{[0]: [CNode]71, [1]: ValueNode<Int64Imm> 50256, [2]: ValueNode<Int> Int32}
+#   2: @↓GPT2LMHeadModel.17:[CNode]71{[0]: ValueNode<DoSignaturePrimitive> S-Prim-NotEqual, [1]: фtokens, [2]: ValueNode<Int64Imm> 50256}
+#   3: @↓GPT2LMHeadModel.17:input_mask{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: [CNode]71, [2]: ValueNode<Float> Float32}
+#   4: @↓GPT2LMHeadModel.17:[CNode]72{[0]: ValueNode<FuncGraph> GPT2Model.20, [1]: фtokens, [2]: input_mask}
+#   5: @↓GPT2LMHeadModel.17:output_states{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]72, [2]: ValueNode<Int64Imm> 0}
+#   6: @↓GPT2LMHeadModel.17:embedding_table{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]72, [2]: ValueNode<Int64Imm> 1}
+#   7: @↓GPT2LMHeadModel.17:logits{[0]: ValueNode<FuncGraph> GPTHead.73, [1]: output_states, [2]: embedding_table}
+#   8: @↓GPT2LMHeadModel.17:[CNode]65{[0]: ValueNode<DoSignaturePrimitive> S-Prim-not_equal, [1]: ValueNode<StringImm> train, [2]: ValueNode<StringImm> train}
+#   9: @↓GPT2LMHeadModel.17:[CNode]66{[0]: ValueNode<FuncGraph> bool_.42, [1]: [CNode]65}
+#  10: @↓GPT2LMHeadModel.17:[CNode]68{[0]: ValueNode<Primitive> Switch, [1]: [CNode]66, [2]: ValueNode<FuncGraph> ✓↓GPT2LMHeadModel.67, [3]: ValueNode<FuncGraph> ✗↓GPT2LMHeadModel.18}
+#  11: @↓GPT2LMHeadModel.17:[CNode]69{[0]: [CNode]68}
+#  12: @↓GPT2LMHeadModel.17:[CNode]70{[0]: ValueNode<Primitive> Return, [1]: [CNode]69}
+
+
+# [No.7] ✗↓GPT2LMHeadModel.18
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/
+funcgraph fg_18[fg_17](
+) {
+
+#------------------------> 6
+    %1 = FuncGraph::fg_19()    # fg_19=↓↓GPT2LMHeadModel.19 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]74
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/#[CNode]75
+}
+# order:
+#   1: @✗↓GPT2LMHeadModel.18:[CNode]74{[0]: ValueNode<FuncGraph> ↓↓GPT2LMHeadModel.19}
+#   2: @✗↓GPT2LMHeadModel.18:[CNode]75{[0]: ValueNode<Primitive> Return, [1]: [CNode]74}
+
+
+# [No.8] ↓↓GPT2LMHeadModel.19
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:107/        if self.phase != 'train':/
+funcgraph fg_19[fg_17](
+) {
+    %1 : $(↓GPT2LMHeadModel.17):Tensor(Bool)[4, 2047] = DoSignaturePrimitive::S-Prim-NotEqual{prim_type=1}[output_names=["output"], input_names=["x1", "x2"], out_strategy=None, in_strategy=((I64(1), I64(1)), ())](%para1176, I64(50256))    #(Tensor(I32)[4, 2047], I64NoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:101/        input_mask = self.cast(self.not_equal(tokens, self.eos_token), mstype.float32)/#[CNode]71
+    %2 : $(↓GPT2LMHeadModel.17):Tensor(F32)[4, 2047] = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"], SrcT=Bool, DstT=F32, dst_type=F32](%1, F32)    #(Tensor(Bool)[4, 2047], TypeTypeNoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:101/        input_mask = self.cast(self.not_equal(tokens, self.eos_token), mstype.float32)/#input_mask
+
+#------------------------> 7
+    %3 = $(↓GPT2LMHeadModel.17):FuncGraph::fg_20(%para1176, %2)    #(Tensor(I32)[4, 2047], Tensor(F32)[4, 2047])    # fg_20=GPT2Model.20 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:104/        output_states, embedding_table = self.backbone(tokens, input_mask)/#[CNode]72
+    %4 = $(↓GPT2LMHeadModel.17):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(0))    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:104/        output_states, embedding_table = self.backbone(tokens, input_mask)/#output_states
+    %5 = $(↓GPT2LMHeadModel.17):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(1))    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:104/        output_states, embedding_table = self.backbone(tokens, input_mask)/#embedding_table
+    %6 = $(↓GPT2LMHeadModel.17):FuncGraph::fg_73(%4, %5)    #(Undefined, Undefined)    # fg_73=GPTHead.73 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:105/        logits = self.head(output_states, embedding_table)/#logits
+    %7 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(0), I64(1))    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#[CNode]76
+    %8 : $(GPT2LMHeadModel.16):Tuple[I64*2]TupleShape(NoShape, NoShape) = Primitive::getattr{prim_type=1}(%para1175, "shape")    #(Tensor(I32)[4, 2048], StringNoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:94/        batch_size, seq_length = input_ids.shape/#[CNode]64
+    %9 : $(GPT2LMHeadModel.16):I64NoShape = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%8, I64(0))    #(Tuple[I64*2]TupleShape(NoShape, NoShape), I64NoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#фbatch_size
+    %10 : $(GPT2LMHeadModel.16):I64NoShape = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%8, I64(1))    #(Tuple[I64*2]TupleShape(NoShape, NoShape), I64NoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#фseq_length
+    %11 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%9, %10)    #(I64NoShape, I64NoShape) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#[CNode]77
+    %12 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(1), I64(1))    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#[CNode]78
+    %13 = DoSignaturePrimitive::S-Prim-StridedSlice{prim_type=1}[new_axis_mask=I64(0), shrink_axis_mask=I64(0), end_mask=I64(0), input_names=["x", "begin", "end", "strides"], out_strategy=None, in_strategy=((I64(1), I64(1))), output_names=["output"], begin_mask=I64(0), ellipsis_mask=I64(0)](%para1175, %7, %11, %12)    #(Tensor(I32)[4, 2048], Undefined, Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:110/        labels = self.stridedslice(input_ids, (0, 1), (batch_size, seq_length), (1, 1))/#labels
+    %14 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:111/        labels = self.reshape(labels, (-1,))/#[CNode]79
+    %15 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%14)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:111/        labels = self.reshape(labels, (-1,))/#[CNode]80
+    %16 = DoSignaturePrimitive::S-Prim-Reshape{prim_type=1}[output_names=["output"], input_names=["tensor", "shape"]](%13, %15)    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:111/        labels = self.reshape(labels, (-1,))/#labels
+    %17 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:112/        input_mask = self.reshape(input_mask, (-1,))/#[CNode]81
+    %18 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%17)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:112/        input_mask = self.reshape(input_mask, (-1,))/#[CNode]82
+    %19 = DoSignaturePrimitive::S-Prim-Reshape{prim_type=1}[output_names=["output"], input_names=["tensor", "shape"]](%2, %18)    #(Tensor(F32)[4, 2047], Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:112/        input_mask = self.reshape(input_mask, (-1,))/#input_mask
+    %20 = FuncGraph::fg_83(%6, %16, %19)    #(Undefined, Undefined, Undefined)    # fg_83=CrossEntropyLoss.83 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:113/        loss = self.loss(logits, labels, input_mask)/#loss
+    Primitive::Return{prim_type=1}(%20)    #(Undefined) #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:114/        return loss/#[CNode]84
+}
+# order:
+#   1: @↓↓GPT2LMHeadModel.19:[CNode]76{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 0, [2]: ValueNode<Int64Imm> 1}
+#   2: @↓↓GPT2LMHeadModel.19:[CNode]77{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: фbatch_size, [2]: фseq_length}
+#   3: @↓↓GPT2LMHeadModel.19:[CNode]78{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<Int64Imm> 1}
+#   4: @↓↓GPT2LMHeadModel.19:labels{[0]: ValueNode<DoSignaturePrimitive> S-Prim-StridedSlice, [1]: фinput_ids, [2]: [CNode]76, [3]: [CNode]77, [4]: [CNode]78}
+#   5: @↓↓GPT2LMHeadModel.19:[CNode]79{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   6: @↓↓GPT2LMHeadModel.19:[CNode]80{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]79}
+#   7: @↓↓GPT2LMHeadModel.19:labels{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Reshape, [1]: labels, [2]: [CNode]80}
+#   8: @↓↓GPT2LMHeadModel.19:[CNode]81{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   9: @↓↓GPT2LMHeadModel.19:[CNode]82{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]81}
+#  10: @↓↓GPT2LMHeadModel.19:input_mask{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Reshape, [1]: input_mask, [2]: [CNode]82}
+#  11: @↓↓GPT2LMHeadModel.19:loss{[0]: ValueNode<FuncGraph> CrossEntropyLoss.83, [1]: logits, [2]: labels, [3]: input_mask}
+#  12: @↓↓GPT2LMHeadModel.19:[CNode]84{[0]: ValueNode<Primitive> Return, [1]: loss}
+
+
+# [No.9] GPT2Model.20
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:246/    def construct(self, input_ids, input_mask):/
+funcgraph fg_20[fg_8](
+        %para1177 : Tensor(I32)[4, 2047]    # input_ids
+        , %para1178 : Tensor(F32)[4, 2047]    # input_mask
+    ) {
+    %1 : Tuple[I64*2]TupleShape(NoShape, NoShape) = FuncGraph::fg_85(%para1177)    #(Tensor(I32)[4, 2047])    # fg_85=shape.85 #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:248/        batch_size, _ = F.shape(input_ids)/#[CNode]86
+    %2 : I64NoShape = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Tuple[I64*2]TupleShape(NoShape, NoShape), I64NoShape) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:248/        batch_size, _ = F.shape(input_ids)/#batch_size
+    %3 : Tuple[I64*2]TupleShape(NoShape, NoShape) = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%2, I64(1))    #(I64NoShape, I64NoShape) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:249/        input_position = self.tile(self.input_position, (batch_size, 1))/#[CNode]87
+    %4 : Tensor(I32)[4, 2048] = DoSignaturePrimitive::S-Prim-Tile{prim_type=1}[output_names=["output"], input_names=["x", "multiples"], out_strategy=None, in_strategy=((I64(1)))](Tensor(34)[2048], %3)    #(Tensor(I32)[2048], Tuple[I64*2]TupleShape(NoShape, NoShape)) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:249/        input_position = self.tile(self.input_position, (batch_size, 1))/#input_position
+
+#------------------------> 8
+    %5 = FuncGraph::fg_21(%para1177, %4)    #(Tensor(I32)[4, 2047], Tensor(I32)[4, 2048])    # fg_21=GPTEmbeddingLayer.21 #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:251/        input_embedding, embedding_table = self.embedding(input_ids, input_position)/#[CNode]88
+    %6 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(0))    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:251/        input_embedding, embedding_table = self.embedding(input_ids, input_position)/#input_embedding
+    %7 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"]](%6, F16)    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:253/        hidden_states = self.cast(input_embedding, self.dtype)/#hidden_states
+    %8 = FuncGraph::fg_89(I64(0), %7)    #(Undefined, Undefined)    # fg_89=↵GPT2Model.89 #scope: Default/network-GPT2LMHeadModel
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:104/        output_states, embedding_table = self.backbone(tokens, input_mask)/#[CNode]90
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:257/        for i in range(self.num_layers):/#[CNode]91
+}
+# order:
+#   1: @GPT2Model.20:[CNode]86{[0]: ValueNode<FuncGraph> shape.85, [1]: input_ids}
+#   2: @GPT2Model.20:batch_size{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]86, [2]: ValueNode<Int64Imm> 0}
+#   3: @GPT2Model.20:[CNode]87{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: batch_size, [2]: ValueNode<Int64Imm> 1}
+#   4: @GPT2Model.20:input_position{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Tile, [1]: ValueNode<Tensor> Tensor(shape=[2048], dtype=Int32, value=[...]), [2]: [CNode]87}
+#   5: @GPT2Model.20:[CNode]88{[0]: ValueNode<FuncGraph> GPTEmbeddingLayer.21, [1]: input_ids, [2]: input_position}
+#   6: @GPT2Model.20:input_embedding{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]88, [2]: ValueNode<Int64Imm> 0}
+#   7: @GPT2Model.20:embedding_table{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]88, [2]: ValueNode<Int64Imm> 1}
+#   8: @GPT2Model.20:hidden_states{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: input_embedding, [2]: ValueNode<Float> Float16}
+#   9: @GPT2Model.20:attention_mask{[0]: ValueNode<FuncGraph> AttentionMask.92, [1]: input_mask}
+#  10: @GPT2Model.20:[CNode]93{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_range, [1]: ValueNode<Int64Imm> 24}
+#  11: @GPT2Model.20:[CNode]94{[0]: ValueNode<FuncGraph> ms_len.95, [1]: [CNode]93}
+#  12: @GPT2Model.20:[CNode]91{[0]: ValueNode<Primitive> Return, [1]: [CNode]90}
+#  13: @GPT2Model.20:[CNode]90{[0]: ValueNode<FuncGraph> ↵GPT2Model.89, [1]: ValueNode<Int64Imm> 0, [2]: hidden_states}
+
+
+# [No.10] GPTEmbeddingLayer.21
+# In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:150/    def construct(self, input_ids, input_position):/
+funcgraph fg_21[fg_8](
+        %para1179 : Tensor(I32)[4, 2047]    # input_ids
+        , %para1180 : Tensor(I32)[4, 2048]    # input_position
+    ) {
+    %1 : Tuple[Tensor(F32)*2]TupleShape((4, 2047, 1024), (50257, 1024)) = FuncGraph::fg_96(%para1179)    #(Tensor(I32)[4, 2047])    # fg_96=VocabEmbedding.96 #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:152/        word_embedding, word_table = self.word_embedding(input_ids)/#[CNode]97
+    %2 : Tensor(F32)[4, 2047, 1024] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Tuple[Tensor(F32)*2]TupleShape((4, 2047, 1024), (50257, 1024)), I64NoShape) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:152/        word_embedding, word_table = self.word_embedding(input_ids)/#word_embedding
+    %3 : Tuple[Tensor(F32)*2]TupleShape((4, 2048, 1024), (2048, 1024)) = FuncGraph::fg_98(%para1180)    #(Tensor(I32)[4, 2048])    # fg_98=VocabEmbedding.98 #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:153/        position_embedding, _ = self.position_embedding(input_position)/#[CNode]99
+    %4 : Tensor(F32)[4, 2048, 1024] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(0))    #(Tuple[Tensor(F32)*2]TupleShape((4, 2048, 1024), (2048, 1024)), I64NoShape) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:153/        position_embedding, _ = self.position_embedding(input_position)/#position_embedding
+
+#------------------------> 9
+    %5 = DoSignaturePrimitive::S-Prim-Add{prim_type=1}[output_names=["output"], input_names=["x", "y"], out_strategy=None, in_strategy=((I64(1), I64(1), I64(1)), (I64(1), I64(1), I64(1)))](%2, %4)    #(Tensor(F32)[4, 2047, 1024], Tensor(F32)[4, 2048, 1024]) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:154/        embedding = self.add(word_embedding, position_embedding)/#embedding
+    %6 = FuncGraph::fg_100(%5)    #(Undefined)    # fg_100=Dropout.100 #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:155/        embedding = self.dropout(embedding)/#embedding
+    %7 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(1))    #(Tuple[Tensor(F32)*2]TupleShape((4, 2047, 1024), (50257, 1024)), Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:152/        word_embedding, word_table = self.word_embedding(input_ids)/#word_table
+    %8 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%6, %7)    #(Undefined, Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:156/        return embedding, word_table/#[CNode]101
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/network-GPT2LMHeadModel/backbone-GPT2Model/embedding-GPTEmbeddingLayer
+      # In file /home/crackhopper/project/test_ascend/mindformers/models/gpt2/gpt2.py:156/        return embedding, word_table/#[CNode]102
+}
+# order:
+#   1: @GPTEmbeddingLayer.21:[CNode]97{[0]: ValueNode<FuncGraph> VocabEmbedding.96, [1]: input_ids}
+#   2: @GPTEmbeddingLayer.21:word_embedding{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]97, [2]: ValueNode<Int64Imm> 0}
+#   3: @GPTEmbeddingLayer.21:word_table{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]97, [2]: ValueNode<Int64Imm> 1}
+#   4: @GPTEmbeddingLayer.21:[CNode]99{[0]: ValueNode<FuncGraph> VocabEmbedding.98, [1]: input_position}
+#   5: @GPTEmbeddingLayer.21:position_embedding{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]99, [2]: ValueNode<Int64Imm> 0}
+#   6: @GPTEmbeddingLayer.21:embedding{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Add, [1]: word_embedding, [2]: position_embedding}
+#   7: @GPTEmbeddingLayer.21:embedding{[0]: ValueNode<FuncGraph> Dropout.100, [1]: embedding}
+#   8: @GPTEmbeddingLayer.21:[CNode]101{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: embedding, [2]: word_table}
+#   9: @GPTEmbeddingLayer.21:[CNode]102{[0]: ValueNode<Primitive> Return, [1]: [CNode]101}
+
+
+#===============================================================================
+# num of function graphs in stack: 10/11 (Ignored 1 internal frames).
