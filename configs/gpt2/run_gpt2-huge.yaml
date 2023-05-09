@@ -2,7 +2,7 @@ base_config: [
     './task_config/context.yaml',
     './task_config/runner.yaml',
     './task_config/gpt2_dataset.yaml',
-    './model_config/gpt2-small.yaml',
+    './model_config/gpt2-huge.yaml',
     '../__base__.yaml' ]
 
 # cloud context init config
@@ -25,10 +25,10 @@ recompute_config:
 
 parallel_config:
   data_parallel: 1
-  model_parallel: 1
-  pipeline_stage: 1
+  model_parallel: 2
+  pipeline_stage: 4
   optimizer_shard: False
-  micro_batch_num: 4
+  micro_batch_num: 32
   vocab_emb_dp: True
   gradient_aggregation_group: 1
 
@@ -108,4 +108,4 @@ resume_or_finetune_checkpoint: ""
 run_mode: 'train'
 trainer:
   type: CausalLanguageModelingTrainer
-  model_name: 'gpt2-small'
+  model_name: 'gpt2-large'
