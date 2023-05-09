@@ -7,7 +7,7 @@ base_config: [
 
 # cloud context init config
 context:
-  mode: 1 # 0--Graph Mode; 1--Pynative Mode
+  mode: 0 # 0--Graph Mode; 1--Pynative Mode
   device_target: "Ascend"
   device_id: 0
 
@@ -51,7 +51,7 @@ runner_config:
   epochs: 30
   batch_size: 1
   sink_size: 1
-  sink_mode: True
+  sink_mode: False
   per_epoch_size: -1
   initial_epoch: 0
   has_trained_epoches: 0
