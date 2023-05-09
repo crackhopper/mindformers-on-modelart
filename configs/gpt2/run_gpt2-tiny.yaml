@@ -83,6 +83,8 @@ lr_schedule:
   total_steps: -1 # -1 means it will load the total steps of the dataset
 
 callbacks:
+  - type: StepsTimerMonitor
+    per_print_step: 1
   - type: MFLossMonitor
   - type: SummaryMonitor
     keep_default_action: True

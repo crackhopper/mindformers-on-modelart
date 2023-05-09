@@ -30,8 +30,39 @@ from mindformers.tools.logger import logger
 from mindformers.tools.utils import LOCAL_DEFAULT_PATH
 
 
-__all__ = ['ObsMonitor', 'MFLossMonitor', 'CheckpointMointor', 'SummaryMonitor', 'ProfileMonitor']
+__all__ = [
+    'ObsMonitor', 
+    'MFLossMonitor', 
+    'CheckpointMointor', 
+    'SummaryMonitor', 
+    'ProfileMonitor',
+    'StepsTimerMonitor',
+]
 
+
+@MindFormerRegister.register(MindFormerModuleType.CALLBACK)
+class StepsTimerMonitor(Callback):
+    def __init__(self, per_print_step):
+        super(StepsTimerMonitor, self).__init__()
+        self.per_print_step = per_print_step
+
+    def on_train_begin(self, run_context):
+        cb_params = run_context.original_args()
+        cb_params.record_start_time = time.time()
+
+    def on_train_step_begin(self, run_context):
+        self.step_begin_time = time.time()        
+        
+    def on_train_step_end(self, run_context):
+        cb_params = run_context.original_args()
+        step_num = cb_params.cur_step_num
+        cur_time = time.time()
+        if (step_num+1) % self.per_print_step == 0:
+            print("sample passed: ", self.per_print_step, 
+                  " finished step: ", step_num, 
+                  " time passed: ", cur_time - cb_params.record_start_time, 
+                  " current step time: ", cur_time - self.step_begin_time)
+            cb_params.record_start_time = cur_time
 
 @MindFormerRegister.register(MindFormerModuleType.CALLBACK)
 class ObsMonitor:
