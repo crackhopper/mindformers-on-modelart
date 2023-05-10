@@ -54,7 +54,7 @@ train_dataset_task:
 runner_config:
   epochs: 30
   batch_size: 1
-  sink_size: 1
+  sink_size: 16
   sink_mode: False
   per_epoch_size: -1
   initial_epoch: 0
