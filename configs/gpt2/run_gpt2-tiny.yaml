@@ -46,6 +46,10 @@ train_dataset: &train_dataset
   numa_enable: False
   prefetch_size: 1
 
+train_dataset_task:
+  type: CausalLanguageModelDataset
+  dataset_config: *train_dataset
+  
 # runner config
 runner_config:
   epochs: 30
