@@ -1,0 +1,1 @@
+ps aux | grep run_mindformer.py | awk '{print $2}' | xargs -i kill -9 {}
