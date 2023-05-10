@@ -54,7 +54,7 @@ train_dataset_task:
 runner_config:
   epochs: 30
   batch_size: 1
-  sink_size: 1
+  sink_size: 16
   sink_mode: False
   per_epoch_size: -1
   initial_epoch: 0
@@ -112,4 +112,4 @@ resume_or_finetune_checkpoint: ""
 run_mode: 'train'
 trainer:
   type: CausalLanguageModelingTrainer
-  model_name: 'gpt2-large'
+  model_name: 'gpt2-large-c8-mp8-pp1'
