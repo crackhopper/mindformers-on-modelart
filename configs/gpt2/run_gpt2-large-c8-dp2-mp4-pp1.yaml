@@ -16,6 +16,7 @@ parallel:
   gradients_mean: True
   search_mode: "sharding_propagation"
   enable_parallel_optimizer: True
+  full_batch: True # 开启后，batch_size等于全局batch_size
 
 recompute_config:
   recompute: False
