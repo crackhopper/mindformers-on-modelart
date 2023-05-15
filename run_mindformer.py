@@ -214,4 +214,5 @@ if __name__ == "__main__":
             config_.train_dataset.data_loader.num_samples = args_.num_samples
         if config_.run_mode == 'eval':
             config_.eval_dataset.data_loader.num_samples = args_.num_samples
+    logger.info(str(config_))
     main(config_)
